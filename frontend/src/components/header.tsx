@@ -42,9 +42,12 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:opacity-80",
-                  isLight ? "text-white" : "text-foreground",
-                  isActive && "text-primary font-bold"
+                  "text-sm font-medium transition-colors rounded-md px-3 py-1.5",
+                  isActive
+                    ? "bg-primary text-white"
+                    : isLight
+                      ? "text-white/80 hover:bg-primary hover:text-white"
+                      : "text-foreground/80 hover:bg-primary hover:text-white"
                 )}
               >
                 {item.label}
