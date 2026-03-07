@@ -1,0 +1,9 @@
+services:
+  frontend:
+    build: .
+    ports:
+      - "7000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
