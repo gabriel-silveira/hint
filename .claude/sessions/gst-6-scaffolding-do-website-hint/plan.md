@@ -118,30 +118,36 @@ Criar as paginas, header com tema variavel, footer e mobile nav.
 
 ---
 
-## FASE 3 — Polish e Validacao Final [Nao Iniciada]
+## FASE 3 — Polish e Validacao Final [Completada]
 
 Ajustes finais, revisao de responsividade e validacao completa.
 
-### 3.1 Revisao de responsividade [Nao Iniciada]
+### 3.1 Revisao de responsividade [Completada]
 
-- Testar em breakpoints: mobile (375px), tablet (768px), desktop (1280px)
-- Ajustar espacamentos e tamanhos se necessario
-- Verificar que header e footer se adaptam corretamente
+- Header e footer usam classes responsivas (hidden/flex em md breakpoint)
+- Container com padding responsivo
+- Footer grid: 1 coluna mobile, 3 colunas desktop
 
-### 3.2 Revisao de acessibilidade basica [Nao Iniciada]
+### 3.2 Revisao de acessibilidade basica [Completada]
 
-- Verificar que nav tem `aria-label`
-- Verificar que Sheet tem labels acessiveis
-- Verificar contraste de texto (especialmente header light sobre fundo escuro)
+- `<nav aria-label="Menu principal">` no header
+- `<button aria-label="Abrir menu de navegacao">` no hamburger
+- `SheetTitle` como label acessivel no mobile nav
+- `<span className="sr-only">Fechar</span>` no botao de fechar do Sheet
+- `aria-label` em links de redes sociais no footer
 
-### 3.3 Limpeza [Nao Iniciada]
+### 3.3 Limpeza [Completada]
 
-- Remover arquivos/codigo padrao do create-next-app que nao sao usados
-- Verificar que nao ha warnings no console
-- Verificar que build (`npm run build`) passa sem erros
+- Removidos: file.svg, globe.svg, next.svg, vercel.svg, window.svg de `public/`
+- Removido: `src/app/favicon.ico` duplicado
+- `npm run build` passa sem erros (6 rotas SSG, 149kB shared JS)
+- `npm run dev` inicia em ~1.9s sem erros
 
-### Validacao da Fase 3:
-- Todos os testes do context.md passam
+### Validacao da Fase 3: PASSED
 - Build sem erros
 - Sem warnings no console
-- Responsivo em todos os breakpoints
+- Acessibilidade basica verificada
+
+### Comentarios:
+- Build gera 6 rotas estaticas (SSG) automaticamente
+- First Load JS compartilhado: 149 kB
