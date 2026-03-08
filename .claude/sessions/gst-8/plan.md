@@ -2,230 +2,146 @@
 
 Se você está trabalhando nesta funcionalidade, certifique-se de atualizar este arquivo plan.md conforme progride.
 
-## FASE 1 — Infraestrutura [Não Iniciada ⏳]
+## FASE 1 — Infraestrutura [Completada ✅]
 
 Setup do branch, dependência, refatoração da page e componente base.
 
-### Criar feature branch [Não Iniciada ⏳]
+### Criar feature branch [Completada ✅]
 
-- `git checkout -b feature/gst-8-landing-page-course`
+- Branch: `feature/gst-8-landing-page-course`
 
-### Instalar embla-carousel-react [Não Iniciada ⏳]
+### Instalar embla-carousel-react [Completada ✅]
 
-- `npm install embla-carousel-react` no diretório `frontend/`
-- Versão mais recente (~8.x)
+- `embla-carousel-react@8.6.0` instalado
 
-### Refatorar page.tsx para Server Component [Não Iniciada ⏳]
+### Refatorar page.tsx para Server Component [Completada ✅]
 
-- Remover `"use client"` e hooks
-- Exportar `metadata` com title, description, og:image
-- Criar estrutura `<main>` que compõe todas as seções
-- Importar `ThemeSetter` + todos os componentes de seção (podem ser stubs inicialmente)
+- Removido `"use client"` e hooks
+- `export const metadata` com title, description, og:image
+- Composição de ThemeSetter + 7 seções
 
-### Criar ThemeSetter [Não Iniciada ⏳]
+### Criar ThemeSetter [Completada ✅]
 
-- `src/app/course/components/theme-setter.tsx`
-- Client Component que usa `useHeaderTheme()` + `useEffect` para setar `"light"`
-- Renderiza `null`
+- `src/app/course/components/theme-setter.tsx` — seta header theme para `"light"`
 
-### Criar diretório de componentes [Não Iniciada ⏳]
+### Criar diretório de componentes [Completada ✅]
 
-- `mkdir src/app/course/components/`
-- Criar stubs vazios para todos os 7 componentes de seção (retornando `<section>` vazio)
+- Stubs criados para: hero, bio, reframing, method, proof, testimonials, offer
 
-### Verificação [Não Iniciada ⏳]
+### Verificação [Completada ✅]
 
-- `npm run build` deve compilar sem erros
-- Acessar `/course` deve mostrar página vazia com header em theme light
+- `npm run build` passa sem erros
+- Commit: `d7feab9`
 
 ### Comentários:
-- Esta fase é pré-requisito para todas as outras
-- Executar sequencialmente: branch → install → componentes → verificação
+- Ícones Phosphor SSR: importar de `@phosphor-icons/react/dist/ssr` nos Server Components
+- Testimonials já tem `"use client"` preparado para o carrossel Embla
 
 ---
 
-## FASE 2 — Hero + Bio [Não Iniciada ⏳]
+## FASE 2 — Hero + Bio [Completada ✅]
 
-Implementação das 2 primeiras seções visíveis usando a skill `frontend-design`.
+### Hero Section [Completada ✅]
 
-### Hero Section [Não Iniciada ⏳]
+- Fundo roxo com gradients radiais sutis (indigo shadow top-left + violet bloom center-bottom)
+- Dot-grid texture a 3% opacity para micro-textura
+- Eyebrow pill badge "Método Larissa Rovaron"
+- H1 com underline verde em "de uma vez" (link visual ao CTA)
+- Thin rule separando H1 de H2
+- Opacidades decrescentes: H2 (85%), parágrafo (60%)
+- CTA verde com glow shadow e hover/active states
+- Micro-copy de confiança abaixo do CTA
 
-**Arquivo**: `src/app/course/components/hero.tsx` (Server Component)
+### Bio Section [Completada ✅]
 
-**Elementos**:
-- Fundo escuro/roxo com gradient para contraste com header light
-- `pt-20 md:pt-24` para compensar header fixo
-- H1: "Destrave seu inglês de uma vez por todas." — `font-heading text-4xl md:text-5xl lg:text-6xl`
-- H2 (subheadline): texto sobre pronúncia e confiança
-- Parágrafo de apoio sobre método estruturado
-- CTA: "Garanta sua vaga no Grupo VIP" — `bg-cta text-white href="#"`
-- Responsivo: centralizado em mobile, layout impactante em desktop
+- Layout editorial: foto + barra vertical roxa (desktop), empilhado (mobile)
+- Badge flutuante "13 anos / English Teacher" sobre a foto
+- Gradient wash sutil na base da foto
+- 3 CredentialCards com ícones Phosphor duotone (GraduationCap, GlobeHemisphereWest, Briefcase)
+- Left accent rule roxa dentro de cada card
+- Eyebrow label "Conheça a professora"
+- Duas renderizações de Image (desktop/mobile) para layouts diferentes
 
-**Copy**: Seção HERO de `docs/landing-page-copy.md` (linhas 5-14)
+### Verificação [Completada ✅]
 
-**Ícones SSR**: importar de `@phosphor-icons/react/dist/ssr` se necessário
-
-### Bio Section [Não Iniciada ⏳]
-
-**Arquivo**: `src/app/course/components/bio.tsx` (Server Component)
-
-**Elementos**:
-- H2: "Conheça Larissa Rovaron — a professora que vai transformar o seu inglês de verdade"
-- Foto `larissa-frontal.png` via `next/image` com `priority` (acima da dobra em desktop)
-- Layout: foto esquerda + texto direita (desktop), empilhado (mobile)
-- Texto narrativo sobre vivência com o idioma
-- 3 sub-seções H3: Formação Acadêmica, Experiência Internacional, Experiência Profissional
-- Listas com bullet points em cada sub-seção
-- Fundo branco (#FFFFFF)
-
-**Copy**: Seção QUEM É LARISSA ROVARON de `docs/landing-page-copy.md` (linhas 17-61)
-
-### Verificação [Não Iniciada ⏳]
-
-- Visual review no browser (desktop + mobile)
-- Heading hierarchy correta (H1 → H2 → H3)
-- Imagem carregando com `next/image`
-- Responsividade: empilhado mobile, lado a lado desktop
+- Build passa sem erros
+- Commit: `7349596`
 
 ### Comentários:
-- Usar skill `frontend-design` para design de alta qualidade
-- Hero e Bio podem ser implementados em paralelo (sem dependência entre si)
-- Hero define o tom visual da página toda — merece atenção especial
+- Skill `frontend-design` usada para ambos os componentes
+- Padrão visual estabelecido: hint-purple como cor de autoridade, hint-green reservado para CTAs
+- CredentialCard é um sub-componente reutilizável dentro de bio.tsx
+- Ícones SSR importados de `@phosphor-icons/react/dist/ssr`
 
 ---
 
-## FASE 3 — Reenquadramento + Método [Não Iniciada ⏳]
+## FASE 3 — Reenquadramento + Método [Completada ✅]
 
-Seções 3 e 4 usando a skill `frontend-design`.
+### Reframing Section [Completada ✅]
 
-### Reframing Section [Não Iniciada ⏳]
+- Coluna prose centralizada (max-w-2xl) para foco e intimidade
+- 3 PainPoint cards com left-rail motif (consistente com Bio CredentialCards)
+- Ícones SSR: MicrophoneSlash, ChatSlash, ShieldWarning (duotone)
+- "Respire." em font-heading italic com espaçamento generoso
+- Frase pivô "Foi excesso de método errado." em text-2xl/3xl hint-purple com rule abaixo
+- NeedLine trio com borda esquerda progressiva (light → medium → bold)
 
-**Arquivo**: `src/app/course/components/reframing.tsx` (Server Component)
+### Method Section [Completada ✅]
 
-**Elementos**:
-- Fundo alternado `bg-secondary` (#F7F7FA)
-- H2: "O problema não é você. É o jeito que te ensinaram."
-- 3 bullet points de dor com ícones Phosphor (ex: `SpeakerX`, `BookOpen`, `ShieldWarning` ou similares)
-  - "Estudou por anos… mas ainda trava na hora de falar"
-  - "Entende quando lê… mas não consegue formar frases com naturalidade"
-  - "Sabe regras gramaticais… mas sente insegurança ao se comunicar"
-- Texto "Respire." com espaço visual
-- Frase destaque: "O problema nunca foi falta de capacidade. Foi excesso de método errado." — tipografia grande, bold
-- Restante do texto empático
-- Frases finais: "Precisa de clareza. / Precisa de direção. / Precisa de um método..."
+- Grid 3 colunas (desktop), empilhado (mobile)
+- Cards 1-2: padrão Bio (branco, border, shadow-sm, left accent rule, hover:shadow-md)
+- Card 3 (Grupo VIP): fundo hint-purple com radial blooms (eco do Hero), badge "Diferencial" verde, bullets com CaretRight verde, elevação via ring-2 + shadow purple glow + md:-mt-3/-mb-3
+- Emphasis callouts em ambos os estilos (purple tint para cards claros, white/10 para card escuro)
+- Ícones SSR: PlayCircle, ClipboardText, WhatsappLogo, CaretRight
 
-**Copy**: Seção REENQUADRAMENTO de `docs/landing-page-copy.md` (linhas 64-93)
+### Verificação [Completada ✅]
 
-**Ícones SSR**: importar de `@phosphor-icons/react/dist/ssr`
-
-### Method Section [Não Iniciada ⏳]
-
-**Arquivo**: `src/app/course/components/method.tsx` (Server Component)
-
-**Elementos**:
-- Fundo branco
-- H2: "Um sistema completo para destravar seu inglês com direção, prática e suporte real."
-- Parágrafo introdutório sobre os 3 pilares
-- 3 cards em grid: `grid-cols-1 md:grid-cols-3`
-  - **Card 1 — Videoaulas Estratégicas**: H3, descrição, 4 bullet points com ícones
-  - **Card 2 — Exercícios de Avaliação**: H3, descrição, 4 bullet points com ícones
-  - **Card 3 — Grupo VIP de Mentoria**: H3, descrição, 5 bullet points com ícones, **destaque visual** (borda primary, ou bg diferenciado, ou badge "Diferencial")
-- Textos de ênfase após cada card ("Você não apenas assiste...", etc.)
-
-**Copy**: Seção O MÉTODO LARISSA ROVARON de `docs/landing-page-copy.md` (linhas 96-143)
-
-### Verificação [Não Iniciada ⏳]
-
-- Visual review (desktop + mobile)
-- Alternância de fundos correta (bio branco → reframing cinza → method branco)
-- Cards responsivos: empilhados mobile, grid 3 colunas desktop
-- Grupo VIP visivelmente destacado dos outros cards
+- Build passa sem erros
+- Commit: `124013e`
 
 ### Comentários:
-- Reenquadramento e Método podem ser implementados em paralelo
-- A alternância de fundos (branco/cinza) deve ser visualmente clara entre seções adjacentes
+- Padrão de design visual consistente: left-rail motif aparece em Bio, Reframing e Method
+- Card 3 usa mesma linguagem visual do Hero (gradient + dot-grid) criando eco subliminal
+- "E isso muda tudo." em hint-green é a única instância de texto verde na seção — link visual ao CTA
 
 ---
 
-## FASE 4 — Prova & Autoridade + Depoimentos [Não Iniciada ⏳]
+## FASE 4 — Prova & Autoridade + Depoimentos [Completada ✅]
 
-Seções 5 e 6 usando a skill `frontend-design`. Depoimentos é o componente mais complexo (carrossel).
+### Proof Section [Completada ✅]
 
-### Proof Section [Não Iniciada ⏳]
+- Fundo hint-purple com crosshatch texture (distinto do Hero dot-grid)
+- Layout assimétrico 2 colunas (foto esquerda, copy+números direita)
+- 3 stat numbers monumento (text-5xl–7xl) com green rule + ícones duotone (Clock, GlobeHemisphereWest, Chalkboard)
+- Foto com ghost-frame (ring-1 ring-white/10) e green accent corner block com glow
+- Mobile: números primeiro (order-1), foto depois (order-2) — persuasão para skimmers
+- Bloco de ênfase "É resultado." em frosted panel (bg-white/8) com hint-green left-rule
+- Semântica: `<dl>/<dt>/<dd>` para stat numbers
 
-**Arquivo**: `src/app/course/components/proof.tsx` (Server Component)
+### Testimonials Section [Completada ✅]
 
-**Elementos**:
-- Fundo diferenciado para peso visual (hint-purple com texto branco, ou gradiente escuro)
-- Foto `larissa-autoridade.png` via `next/image` — pose de autoridade, braços cruzados
-- Layout: foto + texto lado a lado (desktop), empilhado (mobile)
-- Texto narrativo sobre vivência com o idioma
-- 3 números em destaque grande (`font-heading text-5xl md:text-6xl`):
-  - "30+" — anos convivendo com o inglês
-  - "11" — países visitados
-  - "13" — anos como English Teacher
-- Texto "Não é teoria. É resultado."
+- bg-secondary (#F7F7FA) para contraste com Proof escuro
+- Desktop: grid estático 3+2 (grid-cols-3, row 2 com 2 cards + col vazia)
+- Mobile: Embla carousel com loop, align start, slides 85% width, dot navigation (pill expandindo w-2→w-6)
+- Cards consistentes: rounded-xl, border, shadow-sm, hover:shadow-md, left-accent rule roxa
+- Avatares: iniciais coloridas (purple, blue, pink, emerald, amber)
+- 5 Star fill amber-400 com aria-label="5 estrelas"
+- Closing line: NeedLine bold callback do Reframing
+- Cleanup: emblaApi.off() no useEffect return
 
-**Copy**: Seção PROVA & AUTORIDADE de `docs/landing-page-copy.md` (linhas 146-159)
+### Verificação [Completada ✅]
 
-### Testimonials Section (Carrossel) [Não Iniciada ⏳]
-
-**Arquivo**: `src/app/course/components/testimonials.tsx` (Client Component — `"use client"`)
-
-**Elementos**:
-- H2: "Veja o que nossos alunos dizem"
-- 5 depoimentos, cada um com:
-  - Avatar: div circular com iniciais coloridas (cores variadas, sem imagens)
-  - Nome + Cidade
-  - 5 estrelas (`Star` weight="fill" do Phosphor)
-  - Texto do depoimento entre aspas
-- **Desktop**: grid estático (layout 3+2 ou 2+2+1)
-- **Mobile**: carrossel Embla com dots de navegação e swipe
-
-**Implementação do carrossel Embla**:
-```tsx
-const [emblaRef, emblaApi] = useEmblaCarousel({
-  loop: true,
-  align: 'start',
-  breakpoints: {
-    '(min-width: 768px)': { active: false } // desativa carrossel no desktop
-  }
-})
-```
-- Dots: baseado em `emblaApi.scrollSnapList()` + `selectedScrollSnap()`
-- Evento `select` para atualizar dot ativo
-- CSS: `overflow-hidden` no viewport, `flex` no container, `min-w-0 flex-[0_0_85%]` nos slides mobile
-
-**Copy**: Seção DEPOIMENTOS de `docs/landing-page-copy.md` (linhas 162-207)
-
-**Dados dos depoimentos** (array estático no componente):
-```tsx
-const testimonials = [
-  { name: "Mariana S.", city: "São Paulo", initials: "MS", color: "bg-purple-500", text: "..." },
-  { name: "Rafael M.", city: "Campinas", initials: "RM", color: "bg-blue-500", text: "..." },
-  { name: "Juliana P.", city: "Rio de Janeiro", initials: "JP", color: "bg-pink-500", text: "..." },
-  { name: "André L.", city: "Belo Horizonte", initials: "AL", color: "bg-green-500", text: "..." },
-  { name: "Camila R.", city: "Curitiba", initials: "CR", color: "bg-amber-500", text: "..." },
-]
-```
-
-### Verificação [Não Iniciada ⏳]
-
-- Proof: números grandes e legíveis, foto de autoridade carregando
-- Testimonials desktop: grid estático funcionando
-- Testimonials mobile: carrossel com swipe e dots funcionais
-- Touch/swipe funciona em mobile
-- Dots atualizam ao navegar
+- Build passa sem erros (local e Docker)
+- Commit: `494489f`
 
 ### Comentários:
-- Proof pode ser implementado primeiro (mais simples)
-- Testimonials é o componente mais complexo — implementar carrossel por último
-- Testar carrossel em viewport mobile real (ou DevTools responsive)
-- A propriedade `active: false` do Embla desativa o carrossel no desktop, mostrando o grid estático
+- **Docker rebuild necessário** ao adicionar novas dependências npm — usar `docker compose down -v && docker compose up --build -d` para limpar o volume anônimo de node_modules
+- Abordagem desktop/mobile separada (hidden/md:hidden + md:grid) em vez de breakpoint do Embla — mais previsível
+- Testimonials é o único Client Component entre as seções (11.1 kB JS)
 
 ---
 
-## FASE 5 — Oferta + Garantia + Revisão Final [Não Iniciada ⏳]
+## FASE 5 — Oferta + Garantia + Revisão Final [Em Progresso ⏰]
 
 Última seção + polimento geral da página.
 
