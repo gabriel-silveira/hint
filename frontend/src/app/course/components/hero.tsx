@@ -3,12 +3,15 @@
  *
  * Server Component: no interactivity, no "use client".
  *
- * Design: dark-purple editorial stage with a radial light bloom behind the CTA
- * zone. Typographic hierarchy is the primary visual tool — the H1 commands the
- * full viewport width at display scale while the subheadline and supporting
- * copy recede gracefully via opacity. The green CTA button is the single
- * saturated accent in an otherwise monochrome palette, making it impossible
- * to miss without shouting.
+ * Design: full-viewport dark-purple editorial stage. The H1 is the
+ * typographic centrepiece — scaled to display/billboard proportions
+ * (text-5xl mobile → text-8xl desktop) so it commands the entire screen.
+ * A radial violet bloom behind the CTA zone draws the eye downward.
+ * The green CTA button is the single saturated accent.
+ *
+ * Layout: min-h-screen with flex centering ensures the hero always fills
+ * the browser viewport regardless of screen size, with content vertically
+ * centred and generous breathing room on all sides.
  *
  * Accessibility:
  * - Semantic heading hierarchy: h1 → h2 → p
@@ -20,15 +23,12 @@ export function Hero() {
   return (
     <section
       aria-label="Apresentação do curso"
-      className="relative overflow-hidden bg-hint-purple pt-28 pb-20 md:pt-32 md:pb-28"
+      className="relative flex min-h-screen items-center overflow-hidden bg-hint-purple"
     >
       {/*
-       * Layered background: two radial gradients stacked via multiple
-       * background-image values.
-       * — Top-left: a deep indigo shadow to anchor the darkness.
-       * — Center-bottom: a violet bloom that gives the CTA zone warmth and
-       *   draws the eye downward toward the button.
-       * Both are purely decorative.
+       * Layered background: two radial gradients.
+       * — Top-left: deep indigo shadow to anchor the darkness.
+       * — Center-bottom: violet bloom warming the CTA zone.
        */}
       <div
         aria-hidden="true"
@@ -42,9 +42,8 @@ export function Hero() {
       />
 
       {/*
-       * Fine noise-like grid overlay: a 1×1 px transparent-to-white dot
-       * pattern at 3% opacity adds micro-texture that prevents the solid
-       * purple from looking flat on high-DPI displays.
+       * Fine dot-grid texture at 3% opacity — prevents the solid purple
+       * from looking flat on high-DPI displays.
        */}
       <div
         aria-hidden="true"
@@ -56,50 +55,48 @@ export function Hero() {
         }}
       />
 
-      {/* Content */}
-      <div className="container relative z-10 mx-auto text-center">
+      {/* Content — vertically centred via parent flex */}
+      <div className="container relative z-10 mx-auto py-28 text-center md:py-32">
 
         {/* Eyebrow label */}
         <p
           aria-hidden="true"
-          className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70"
+          className="mb-8 inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium uppercase tracking-[0.18em] text-white/70 md:mb-10 md:text-base"
         >
           Método Larissa Rovaron
         </p>
 
-        {/* H1 — primary headline */}
-        <h1 className="font-heading mx-auto max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
+        {/* H1 — billboard-scale headline */}
+        <h1 className="font-heading mx-auto max-w-5xl text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
           Destrave seu inglês{" "}
           <span className="relative inline-block whitespace-nowrap">
             de uma vez
             {/*
-             * Decorative underline accent reinforces the "unlock / break free"
-             * metaphor in the headline. It is a thin green rule — the only
-             * appearance of hint-green in the heading area — that subliminally
-             * links the headline promise to the CTA button below.
+             * Green underline accent — the only hint-green in the heading
+             * area, linking the headline promise to the CTA below.
              */}
             <span
               aria-hidden="true"
-              className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-hint-green opacity-80"
+              className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-hint-green opacity-80 md:-bottom-2 md:h-1.5"
             />
           </span>{" "}
           por todas.
         </h1>
 
-        {/* Thin decorative rule — separates headline from subheadline */}
+        {/* Thin decorative rule */}
         <hr
           aria-hidden="true"
-          className="mx-auto mt-8 mb-8 w-12 border-0 border-t border-white/20"
+          className="mx-auto mt-10 mb-10 w-16 border-0 border-t border-white/20 md:mt-12 md:mb-12"
         />
 
         {/* H2 — subheadline */}
-        <h2 className="mx-auto max-w-2xl text-lg font-medium leading-relaxed text-white/85 md:text-xl lg:text-2xl">
+        <h2 className="mx-auto max-w-3xl text-xl font-medium leading-relaxed text-white/85 sm:text-2xl md:text-3xl">
           Fale com pronúncia clara, confiança real e naturalidade —&nbsp;mesmo
           que você já tenha tentado antes e travado.
         </h2>
 
         {/* Supporting paragraph */}
-        <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/60 md:text-lg">
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/60 md:mt-8 md:text-xl">
           Aprenda com um método estruturado e acompanhamento humano dentro de
           um{" "}
           <strong className="font-medium text-white/80">
@@ -109,27 +106,27 @@ export function Hero() {
         </p>
 
         {/* CTA area */}
-        <div className="mt-10 flex flex-col items-center gap-4">
+        <div className="mt-12 flex flex-col items-center gap-5 md:mt-14">
           <a
             href="#"
             className="
               inline-block
               rounded-xl
               bg-hint-green
-              px-8 py-4
-              text-base font-semibold tracking-wide text-white
+              px-10 py-5
+              text-lg font-semibold tracking-wide text-white
               shadow-[0_4px_24px_rgba(0,200,83,0.35)]
               transition-all duration-200 ease-out
               hover:scale-[1.03] hover:shadow-[0_6px_32px_rgba(0,200,83,0.50)]
               active:scale-[0.98]
-              md:px-10 md:py-5 md:text-lg
+              md:px-12 md:py-6 md:text-xl
             "
           >
             Garanta sua vaga no Grupo VIP
           </a>
 
-          {/* Trust micro-copy below the CTA */}
-          <p className="text-xs text-white/40">
+          {/* Trust micro-copy */}
+          <p className="text-sm text-white/40">
             Acesso imediato · Garantia de 7 dias · Cancele quando quiser
           </p>
         </div>
