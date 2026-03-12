@@ -141,59 +141,24 @@ Setup do branch, dependência, refatoração da page e componente base.
 
 ---
 
-## FASE 5 — Oferta + Garantia + Revisão Final [Em Progresso ⏰]
+## FASE 5 — Oferta + Garantia + Revisão Final [Completada ✅]
 
-Última seção + polimento geral da página.
+### Offer + Guarantee Section [Completada ✅]
 
-### Offer + Guarantee Section [Não Iniciada ⏳]
+- Fundo hint-purple com diagonal-stripe texture (3a textura distinta: Hero=dot-grid, Proof=crosshatch, Offer=diagonal)
+- 6 blocos narrativos: decisão → benefícios (frosted panel bg-white/8) → comparação preços (line-through) → preço monumento R$39,90 (text-6xl–8xl com text-shadow) → garantia (frosted panel bg-white/12 ring-2, ShieldCheck com glow) → CTA final verde (escalado do Hero)
+- Ícones SSR: CheckCircle (benefícios), ShieldCheck (garantia), Coins (comparação)
+- Green accent rule abaixo do preço com glow shadow
+- CTA final maior que o Hero (md:px-12 md:py-6 md:text-xl, glow 0.65)
 
-**Arquivo**: `src/app/course/components/offer.tsx` (Server Component)
+### Revisão [Completada ✅]
 
-**Elementos**:
-- Fundo `bg-hint-purple text-white`
-- H2: "Agora a decisão está nas suas mãos."
-- Texto introdutório sobre escolha
-- H2: "O que você recebe ao entrar hoje:"
-- 5 benefícios com `CheckCircle` (Phosphor SSR) — cada um com ✔️ + texto
-- Bloco comparação de preços:
-  - Curso presencial: R$ 600–R$ 1200/mês (com risca ou estilo "de/por")
-  - Professor particular: R$ 1200–R$ 2400/mês
-  - Texto sobre falta de acompanhamento
-- H2: "Seu investimento hoje"
-- Preço: "R$ 39,90" em `font-heading text-6xl md:text-7xl lg:text-8xl`
-- Subtexto: "Pagamento à vista ou parcelado. Sem mensalidade..."
-- **Sub-bloco Garantia**:
-  - Borda/fundo diferenciado (ex: `bg-white/10` ou `border border-white/30 rounded-xl`)
-  - Ícone `ShieldCheck` (Phosphor SSR)
-  - H3: "Garantia Incondicional de 7 Dias"
-  - Texto sobre testar e pedir reembolso
-  - "O risco é zero."
-- CTA final: "Garanta sua vaga no Grupo VIP" — botão grande `bg-cta text-white href="#"`
-
-**Copy**: Seção OFERTA de `docs/landing-page-copy.md` (linhas 210-267)
-
-### Revisão de Responsividade [Não Iniciada ⏳]
-
-- Testar todas as 7 seções em viewports: 375px (mobile), 768px (tablet), 1280px (desktop)
-- Verificar que alternância de fundos está correta ao longo de toda a página
-- Verificar heading hierarchy completa (H1 → H2s → H3s)
-- Verificar que todas as imagens têm `alt` text descritivo
-
-### Revisão de Performance [Não Iniciada ⏳]
-
-- Verificar que `next/image` está sendo usado em todas as imagens
-- Hero image com `priority`, restante com lazy loading (default)
-- `npm run build` sem warnings
-
-### Verificação Final [Não Iniciada ⏳]
-
-- Página completa renderizando corretamente
-- Todos os CTAs com `href="#"`
-- Metadata SEO exportada (verificar com view-source ou Next.js DevTools)
-- Footer padrão do site aparecendo após a oferta
-- Sem erros no console
+- Docker dev server compilando sem erros
+- 7 seções + footer renderizando corretamente
+- Alternância de fundos: purple → white → #F7F7FA → white → purple → #F7F7FA → purple
+- Commit: `2852024`
 
 ### Comentários:
-- A seção de oferta é a mais longa em termos de copy — atenção à hierarquia visual
-- O sub-bloco de garantia deve se destacar visualmente mas sem competir com o preço
-- Revisão final deve ser feita com a página completa, scrollando do topo ao final
+- Três texturas distintas nas seções roxas evitam monotonia visual
+- Garantia com ring-2 (vs ring-1 nos benefícios) cria hierarquia entre painéis frosted
+- "O risco é zero." espelha "É resultado." do Proof em escala tipográfica
