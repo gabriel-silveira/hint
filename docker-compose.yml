@@ -1,6 +1,7 @@
 services:
   frontend:
     build: .
+    restart: unless-stopped
     ports:
       - "7000:3000"
     volumes:
