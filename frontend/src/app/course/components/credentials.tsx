@@ -18,7 +18,7 @@ export function Credentials() {
   return (
     <section
       aria-label="Credenciais da professora"
-      className="flex min-h-screen items-center bg-secondary py-14 md:py-20"
+      className="flex min-h-dvh items-center bg-secondary py-14 md:py-20"
     >
       <div className="container">
 
