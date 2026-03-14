@@ -238,7 +238,7 @@ export function Offer() {
             />
 
             {/* Closing note on the comparisons */}
-            <p className="text-sm italic leading-relaxed text-white/50 md:text-base">
+            <p className="text-sm italic leading-relaxed text-white/70 md:text-base">
               E mesmo assim, você dificilmente teria acompanhamento constante.
             </p>
 
@@ -399,9 +399,17 @@ export function Offer() {
           </a>
 
           {/* Trust micro-copy — mirrors Hero's sub-CTA line */}
-          <p className="mt-5 text-xs text-white/40">
-            Acesso imediato · Garantia de 7 dias · Pagamento seguro
-          </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs font-medium tracking-wide text-white/70">
+            <span className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1">
+              Acesso imediato
+            </span>
+            <span className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1">
+              Garantia de 7 dias
+            </span>
+            <span className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1">
+              Pagamento seguro
+            </span>
+          </div>
         </div>
 
       </div>

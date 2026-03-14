@@ -5,16 +5,11 @@ import { MicrophoneSlash, ChatSlash, ShieldWarning } from "@phosphor-icons/react
  *
  * Narrative arc: validate frustration → redirect blame to method → open hope
  *
- * Layout strategy:
- *   - bg-secondary (#F7F7FA) alternates from Bio's white background
- *   - Pain points rendered as diagnostic "signal cards" with a left-rail motif
- *     consistent with the credential cards in Bio
- *   - Transition copy is typeset with deliberate isolation: each line breathes
- *     alone, rhythm built through spacing rather than decoration
- *   - Key phrase "Foi excesso de método errado." breaks the grid: enlarged,
- *     bold, hint-purple, separated by a fine rule — the visual pivot of the section
- *   - "Precisa de…" trio builds momentum via stacked left-indented lines
- *     with a progressive left-border that thickens slightly
+ * Design: dark purple stage with a diagonal-line micro-texture (distinct from
+ * Hero's dot-grid and Proof's crosshatch). Frosted-glass pain-point cards
+ * float over the dark field. The key phrase pivots to hint-green, linking
+ * the emotional turning point to the CTA color. NeedLine trio uses
+ * progressive white→green left-borders to build momentum toward the solution.
  *
  * Accessibility:
  *   - <section> with aria-label
@@ -25,24 +20,48 @@ export function Reframing() {
   return (
     <section
       aria-label="Reenquadramento"
-      className="bg-secondary py-20 md:py-28"
+      className="relative overflow-hidden py-20 md:py-28"
+      style={{
+        background:
+          "linear-gradient(160deg, #3a0275 0%, #5503af 45%, #4a02a0 100%)",
+      }}
     >
-      <div className="container">
+      {/* Radial bloom — warmer violet toward bottom-right */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 50% at 80% 90%, rgba(139,0,255,0.22) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* Diagonal-line micro-texture — distinct from Hero dot-grid */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, #ffffff 0px, #ffffff 1px, transparent 1px, transparent 16px)",
+        }}
+      />
+
+      <div className="container relative z-10">
         {/* ── Max-width prose column centered ── */}
         <div className="mx-auto max-w-2xl">
 
           {/* ── Eyebrow label ── */}
-          <p className="mb-6 font-heading text-xs font-bold uppercase tracking-[0.22em] text-hint-purple">
+          <p className="mb-6 font-heading text-xs font-bold uppercase tracking-[0.22em] text-white/75">
             Antes de continuar
           </p>
 
           {/* ── H2: the reframe headline ── */}
-          <h2 className="font-heading text-3xl font-bold leading-tight text-foreground md:text-4xl">
+          <h2 className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl">
             O problema não é você. É o jeito que te ensinaram.
           </h2>
 
           {/* ── Intro line ── */}
-          <p className="mt-8 text-lg leading-relaxed text-foreground">
+          <p className="mt-8 text-lg leading-relaxed text-white/85">
             Se você já tentou aprender inglês antes e sentiu que:
           </p>
 
@@ -65,46 +84,46 @@ export function Reframing() {
           {/* ── Divider ── */}
           <div
             aria-hidden="true"
-            className="my-12 h-px w-16 rounded-full bg-hint-purple/20"
+            className="my-12 h-px w-16 rounded-full bg-white/20"
           />
 
           {/* ── Transition: Respire ── */}
-          <p className="mb-8 font-heading text-2xl font-semibold italic text-foreground">
+          <p className="mb-8 font-heading text-2xl font-semibold italic text-white">
             Respire.
           </p>
 
           {/* ── Cause statement ── */}
-          <p className="leading-relaxed text-foreground">
+          <p className="leading-relaxed text-white/85">
             O problema nunca foi falta de capacidade.
           </p>
 
           {/* ── Key phrase — the visual pivot ── */}
           <div className="mt-4 mb-2">
             <p
-              className="font-heading text-2xl font-bold leading-tight text-hint-purple md:text-3xl"
+              className="font-heading text-2xl font-bold leading-tight text-hint-green md:text-3xl"
             >
               Foi excesso de método errado.
             </p>
             {/* Fine rule beneath the key phrase */}
             <div
               aria-hidden="true"
-              className="mt-3 h-px w-full rounded-full bg-hint-purple/15"
+              className="mt-3 h-px w-full rounded-full bg-hint-green/30"
             />
           </div>
 
           {/* ── Explanation paragraphs ── */}
           <div className="mt-8 flex flex-col gap-4">
-            <p className="leading-relaxed text-muted-foreground">
+            <p className="leading-relaxed text-white/75">
               A maioria dos cursos ensina inglês como se fosse uma matéria
               escolar — cheia de regras e exercícios mecânicos.
             </p>
-            <p className="leading-relaxed text-foreground">
+            <p className="leading-relaxed text-white/85">
               Mas ninguém aprende a falar estudando regra.
             </p>
-            <p className="font-heading text-lg font-semibold leading-relaxed text-foreground">
+            <p className="font-heading text-lg font-semibold leading-relaxed text-white">
               Aprende usando.
             </p>
-            <p className="leading-relaxed text-muted-foreground">
+            <p className="leading-relaxed text-white/75">
               E quase ninguém foi ensinado a usar o inglês com segurança real.
             </p>
           </div>
@@ -113,7 +132,7 @@ export function Reframing() {
           <div aria-hidden="true" className="mt-10 mb-2" />
 
           {/* ── Pivot to solution ── */}
-          <p className="font-heading text-lg font-semibold text-foreground">
+          <p className="font-heading text-lg font-semibold text-white">
             Você não precisa de mais gramática.
           </p>
 
@@ -140,8 +159,8 @@ export function Reframing() {
 }
 
 /* ─────────────────────────────────────────────
-   PainPoint — diagnostic card with left-rail motif
-   Mirrors the left-border pattern from Bio's CredentialCard
+   PainPoint — frosted-glass diagnostic card
+   Dark-theme adaptation: translucent white panel over purple
 ───────────────────────────────────────────── */
 interface PainPointProps {
   icon: React.ReactNode;
@@ -150,28 +169,28 @@ interface PainPointProps {
 
 function PainPoint({ icon, text }: PainPointProps) {
   return (
-    <li className="flex items-start gap-4 rounded-xl border border-border bg-white px-5 py-4 shadow-sm">
+    <li className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.07] px-5 py-4 backdrop-blur-sm">
       {/* Left accent rule */}
       <div
         aria-hidden="true"
-        className="mt-0.5 w-0.5 self-stretch shrink-0 rounded-full bg-hint-purple/30"
+        className="mt-0.5 w-0.5 self-stretch shrink-0 rounded-full bg-white/25"
       />
       {/* Icon */}
       <div
         aria-hidden="true"
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-hint-purple/10 text-hint-purple"
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white/80"
       >
         {icon}
       </div>
       {/* Text */}
-      <p className="leading-relaxed text-foreground">{text}</p>
+      <p className="leading-relaxed text-white/90">{text}</p>
     </li>
   );
 }
 
 /* ─────────────────────────────────────────────
-   NeedLine — one "Precisa de…" line with a growing
-   left-border accent that builds visual momentum
+   NeedLine — progressive left-border accent
+   Dark-theme: white → green progression
 ───────────────────────────────────────────── */
 type NeedLineWeight = "light" | "medium" | "bold";
 
@@ -185,18 +204,18 @@ const needLineStyles: Record<
   { border: string; text: string; font: string }
 > = {
   light: {
-    border: "border-l-2 border-hint-purple/25",
-    text: "text-muted-foreground",
+    border: "border-l-2 border-white/20",
+    text: "text-white/75",
     font: "font-normal",
   },
   medium: {
-    border: "border-l-[3px] border-hint-purple/50",
-    text: "text-foreground",
+    border: "border-l-[3px] border-white/40",
+    text: "text-white/85",
     font: "font-medium",
   },
   bold: {
-    border: "border-l-4 border-hint-purple",
-    text: "text-foreground",
+    border: "border-l-4 border-hint-green",
+    text: "text-white",
     font: "font-heading font-bold",
   },
 };

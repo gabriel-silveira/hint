@@ -96,7 +96,7 @@ export function Hero() {
         </h2>
 
         {/* Supporting paragraph */}
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/60 md:mt-8 md:text-xl">
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/75 md:mt-8 md:text-xl">
           Aprenda com um método estruturado e acompanhamento humano dentro de
           um{" "}
           <strong className="font-medium text-white/80">
@@ -126,9 +126,17 @@ export function Hero() {
           </a>
 
           {/* Trust micro-copy */}
-          <p className="text-sm text-white/40">
-            Acesso imediato · Garantia de 7 dias · Cancele quando quiser
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-medium tracking-wide text-white/70">
+            <span className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1">
+              Acesso imediato
+            </span>
+            <span className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1">
+              Garantia de 7 dias
+            </span>
+            <span className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1">
+              Cancele quando quiser
+            </span>
+          </div>
         </div>
       </div>
     </section>

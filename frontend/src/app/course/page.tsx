@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ThemeSetter } from "./components/theme-setter";
 import { Hero } from "./components/hero";
 import { Bio } from "./components/bio";
+import { Credentials } from "./components/credentials";
 import { Reframing } from "./components/reframing";
 import { Method } from "./components/method";
 import { Proof } from "./components/proof";
@@ -26,6 +27,7 @@ export default function CoursePage() {
       <ThemeSetter />
       <Hero />
       <Bio />
+      <Credentials />
       <Reframing />
       <Method />
       <Proof />
