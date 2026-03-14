@@ -22,11 +22,13 @@ export function Header() {
 
   const isLandingPage = pathname === "/course";
   const [visible, setVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
     if (!isLandingPage) {
       setVisible(true);
+      setScrolled(false);
       return;
     }
 
@@ -36,6 +38,7 @@ export function Header() {
       const isAtTop = currentY < 50;
 
       setVisible(isScrollingUp || isAtTop);
+      setScrolled(!isAtTop);
       lastScrollY.current = currentY;
     };
 
@@ -46,9 +49,9 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50",
-        isLandingPage && "transition-transform duration-300 ease-in-out",
-        isLandingPage && !visible && "-translate-y-full"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
+        isLandingPage && !visible && "-translate-y-full",
+        isLandingPage && scrolled && "bg-black/50 backdrop-blur-lg shadow-lg"
       )}
     >
       <div className="container flex h-16 items-center justify-between md:h-20">
