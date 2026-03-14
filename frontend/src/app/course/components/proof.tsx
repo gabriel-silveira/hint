@@ -40,7 +40,7 @@ export function Proof() {
   return (
     <section
       aria-label="Resultados comprovados"
-      className="relative overflow-hidden py-20 md:py-28"
+      className="relative overflow-hidden pt-0 pb-0"
       style={{ background: "#5503af" }}
     >
 
@@ -97,54 +97,23 @@ export function Proof() {
          *   3. Body paragraphs
          * Handled with `order-*` utilities on each child.
          */}
-        <div className="flex flex-col gap-12 md:flex-row md:items-center md:gap-16 lg:gap-20">
+        <div className="flex flex-col gap-12 md:flex-row md:gap-12 lg:gap-16">
 
-          {/* ── LEFT: Photo ─────────────────────────────────────────────── */}
-          <div className="order-2 flex justify-center md:order-1 md:w-5/12 md:justify-end lg:w-1/2">
-            <div className="relative">
-              {/*
-               * Ghost-frame: a white/10 ring drawn as a positioned sibling div
-               * inset slightly so it sits *behind* the image, giving a layered
-               * floating-frame impression without a CSS outline that clips.
-               */}
-              <div
-                aria-hidden="true"
-                className="absolute -inset-3 rounded-3xl ring-1 ring-white/10"
-              />
-
-              {/*
-               * Green accent corner block — top-left of the photo frame.
-               * A small 12×12 square in hint-green that adds the single
-               * saturated pop of colour to the photo quadrant, echoing the
-               * green stat accents on the right without being symmetric.
-               */}
-              <div
-                aria-hidden="true"
-                className="absolute -top-5 -left-5 h-12 w-12 rounded-md bg-hint-green/80"
-                style={{
-                  boxShadow: "0 0 24px rgba(0,200,83,0.45)",
-                }}
-              />
-
+          {/* ── LEFT: Photo — anchored to bottom, limited width ────────── */}
+          <div className="order-2 flex items-end justify-center overflow-hidden md:order-1 md:w-5/12 md:self-end lg:w-5/12">
+            <div className="w-[65%] md:w-[80%]">
               <Image
                 src="/larissa-autoridade.png"
                 alt="Larissa Rovaron — pose de autoridade"
                 width={480}
                 height={580}
-                className="relative rounded-2xl object-cover"
-                style={{
-                  boxShadow: [
-                    "0 0 0 1px rgba(255,255,255,0.10)",
-                    "0 24px 64px rgba(85,3,175,0.55)",
-                    "0 8px 24px rgba(0,0,0,0.40)",
-                  ].join(", "),
-                }}
+                className="w-full object-contain object-bottom"
               />
             </div>
           </div>
 
           {/* ── RIGHT: Copy + Numbers ───────────────────────────────────── */}
-          <div className="order-1 flex flex-col md:order-2 md:w-7/12 lg:w-1/2">
+          <div className="order-1 flex flex-col md:order-2 md:w-7/12 md:self-center lg:w-1/2">
 
             {/* Eyebrow label */}
             <p className="mb-6 inline-block self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
@@ -303,25 +272,27 @@ export function Proof() {
                 aplicação real.
               </p>
 
-              {/*
-               * Closing emphasis block.
-               * "Não é teoria." and "É resultado." are typographically
-               * elevated: the first line is medium-weight italic in white/85,
-               * and the second is bold, slightly larger, and fully white —
-               * the single most emphatic text moment in the section.
-               * A hint-green left-rule anchors both lines, consistent with
-               * the left-rule motif from Bio and Method.
-               */}
-              <div className="flex items-stretch gap-4 rounded-xl bg-white/8 p-5 ring-1 ring-white/12">
-                <div
-                  aria-hidden="true"
-                  className="w-0.5 shrink-0 rounded-full bg-hint-green"
-                />
-                <div className="flex flex-col gap-1.5">
-                  <p className="font-heading text-lg font-medium italic leading-snug text-white/85 md:text-xl">
+              {/* Closing emphasis — A) Amber glow */}
+              <div
+                className="relative overflow-hidden rounded-2xl px-7 py-6 md:px-9 md:py-8"
+                style={{
+                  background: "linear-gradient(135deg, #F59E0B 0%, #FBBF24 60%, #FCD34D 100%)",
+                  boxShadow: "0 8px 32px rgba(245,158,11,0.30), 0 0 60px rgba(251,191,36,0.12)",
+                }}
+              >
+                <div className="flex flex-col gap-1">
+                  <p
+                    className="font-heading text-xl font-semibold italic leading-snug md:text-2xl"
+                    style={{ color: "rgba(120,53,0,0.75)" }}
+                  >
                     Não é teoria.
                   </p>
-                  <p className="font-heading text-2xl font-bold leading-tight text-white md:text-3xl">
+                  <p
+                    className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl"
+                    style={{
+                      textShadow: "0 2px 8px rgba(120,53,0,0.20)",
+                    }}
+                  >
                     É resultado.
                   </p>
                 </div>
