@@ -80,7 +80,7 @@ export function Bio() {
             <div className="relative flex flex-col justify-center bg-white px-2 py-16 md:w-[55%] md:py-24 md:pl-12 lg:pl-16">
 
               {/* Eyebrow */}
-              <p className="mb-6 font-heading text-sm font-bold uppercase tracking-[0.2em] text-hint-purple md:text-base">
+              <p className="mb-6 self-start rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
                 Conheça a professora
               </p>
 

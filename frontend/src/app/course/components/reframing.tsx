@@ -51,7 +51,7 @@ export function Reframing() {
         <div className="mx-auto max-w-3xl">
 
           {/* ── Eyebrow label ── */}
-          <p className="mb-6 font-heading text-xs font-bold uppercase tracking-[0.22em] text-white/75">
+          <p className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
             Antes de continuar
           </p>
 

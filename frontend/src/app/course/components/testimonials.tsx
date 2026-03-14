@@ -221,7 +221,7 @@ export function Testimonials() {
         <div className="mx-auto mb-14 max-w-3xl text-center md:mb-16">
 
           {/* Eyebrow */}
-          <p className="mb-5 font-heading text-xs font-bold uppercase tracking-[0.2em] text-hint-purple">
+          <p className="mb-5 inline-block rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
             Resultados reais
           </p>
 

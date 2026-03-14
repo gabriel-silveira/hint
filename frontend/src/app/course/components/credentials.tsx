@@ -24,7 +24,7 @@ export function Credentials() {
 
         {/* ── Section header ── */}
         <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
-          <p className="mb-4 font-heading text-xs font-bold uppercase tracking-[0.22em] text-hint-purple md:text-sm">
+          <p className="mb-4 inline-block rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
             Por que a Larissa?
           </p>
           <h2 className="font-heading text-3xl font-bold leading-tight text-foreground whitespace-nowrap sm:text-4xl md:text-5xl">
