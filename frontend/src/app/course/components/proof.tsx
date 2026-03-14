@@ -145,11 +145,11 @@ export function Proof() {
                   aria-hidden="true"
                   className="flex items-center gap-2"
                 >
-                  <div className="h-0.5 w-8 rounded-full bg-hint-green" />
+                  <div className="h-0.5 w-8 rounded-full bg-white/40" />
                   <Clock
                     weight="duotone"
-                    size={16}
-                    className="text-hint-green opacity-80"
+                    size={32}
+                    className="text-white/70"
                     aria-hidden="true"
                   />
                 </div>
@@ -167,11 +167,11 @@ export function Proof() {
                   aria-hidden="true"
                   className="flex items-center gap-2"
                 >
-                  <div className="h-0.5 w-8 rounded-full bg-hint-green" />
+                  <div className="h-0.5 w-8 rounded-full bg-white/40" />
                   <GlobeHemisphereWest
                     weight="duotone"
-                    size={16}
-                    className="text-hint-green opacity-80"
+                    size={32}
+                    className="text-white/70"
                     aria-hidden="true"
                   />
                 </div>
@@ -189,11 +189,11 @@ export function Proof() {
                   aria-hidden="true"
                   className="flex items-center gap-2"
                 >
-                  <div className="h-0.5 w-8 rounded-full bg-hint-green" />
+                  <div className="h-0.5 w-8 rounded-full bg-white/40" />
                   <Chalkboard
                     weight="duotone"
-                    size={16}
-                    className="text-hint-green opacity-80"
+                    size={32}
+                    className="text-white/70"
                     aria-hidden="true"
                   />
                 </div>
@@ -247,7 +247,7 @@ export function Proof() {
               >
                 <div className="h-px flex-1 bg-white/15" />
                 <div className="h-1.5 w-1.5 rotate-45 bg-white/30" />
-                <div className="h-px w-12 bg-white/15" />
+                <div className="h-px flex-1 bg-white/15" />
               </div>
 
               <p className="text-lg leading-relaxed text-white/90 md:text-xl">
