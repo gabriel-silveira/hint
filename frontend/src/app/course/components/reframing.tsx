@@ -48,7 +48,7 @@ export function Reframing() {
 
       <div className="container relative z-10">
         {/* ── Max-width prose column centered ── */}
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-3xl">
 
           {/* ── Eyebrow label ── */}
           <p className="mb-6 font-heading text-xs font-bold uppercase tracking-[0.22em] text-white/75">
@@ -56,7 +56,7 @@ export function Reframing() {
           </p>
 
           {/* ── H2: the reframe headline ── */}
-          <h2 className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl">
+          <h2 className="font-heading text-3xl font-bold leading-tight text-white md:text-[2.1rem]">
             O problema não é você. É o jeito que te ensinaram.
           </h2>
 
@@ -100,14 +100,14 @@ export function Reframing() {
           {/* ── Key phrase — the visual pivot ── */}
           <div className="mt-4 mb-2">
             <p
-              className="font-heading text-2xl font-bold leading-tight text-hint-green md:text-3xl"
+              className="font-heading text-2xl font-bold leading-tight text-amber-300 md:text-3xl"
             >
               Foi excesso de método errado.
             </p>
             {/* Fine rule beneath the key phrase */}
             <div
               aria-hidden="true"
-              className="mt-3 h-px w-full rounded-full bg-hint-green/30"
+              className="mt-3 h-px w-full rounded-full bg-amber-300/30"
             />
           </div>
 
@@ -169,11 +169,11 @@ interface PainPointProps {
 
 function PainPoint({ icon, text }: PainPointProps) {
   return (
-    <li className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.07] px-5 py-4 backdrop-blur-sm">
+    <li className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.07] px-5 py-4 backdrop-blur-sm">
       {/* Left accent rule */}
       <div
         aria-hidden="true"
-        className="mt-0.5 w-0.5 self-stretch shrink-0 rounded-full bg-white/25"
+        className="w-0.5 self-stretch shrink-0 rounded-full bg-white/25"
       />
       {/* Icon */}
       <div
@@ -214,9 +214,9 @@ const needLineStyles: Record<
     font: "font-medium",
   },
   bold: {
-    border: "border-l-4 border-hint-green",
-    text: "text-white",
-    font: "font-heading font-bold",
+    border: "border-l-4 border-amber-300",
+    text: "text-amber-300",
+    font: "font-heading text-lg font-bold md:text-xl",
   },
 };
 
