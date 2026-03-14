@@ -171,7 +171,7 @@ export function Proof() {
                 <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
                   30+
                 </dd>
-                <dt className="text-sm leading-snug text-white/75 md:text-base">
+                <dt className="text-sm leading-snug text-white sm:text-base md:text-lg">
                   anos convivendo com o inglês
                 </dt>
               </div>
@@ -193,7 +193,7 @@ export function Proof() {
                 <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
                   11
                 </dd>
-                <dt className="text-sm leading-snug text-white/75 md:text-base">
+                <dt className="text-sm leading-snug text-white sm:text-base md:text-lg">
                   países visitados
                 </dt>
               </div>
@@ -215,7 +215,7 @@ export function Proof() {
                 <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
                   13
                 </dd>
-                <dt className="text-sm leading-snug text-white/75 md:text-base">
+                <dt className="text-sm leading-snug text-white sm:text-base md:text-lg">
                   anos como English Teacher
                 </dt>
               </div>
