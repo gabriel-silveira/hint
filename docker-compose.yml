@@ -8,3 +8,19 @@ services:
       - ./frontend:/app
       - /app/node_modules
       - /app/.next
+
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.49.0-noble
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - BASE_URL=http://frontend:3000
+      - CI=1
+    depends_on:
+      - frontend
+    ipc: host
+    profiles:
+      - testing
+    command: npx playwright test
