@@ -97,7 +97,7 @@ export function Proof() {
          *   3. Body paragraphs
          * Handled with `order-*` utilities on each child.
          */}
-        <div className="flex flex-col gap-12 md:flex-row md:gap-12 lg:gap-16">
+        <div className="flex flex-col gap-12 md:flex-row md:gap-6 lg:gap-8">
 
           {/* ── LEFT: Photo — anchored to bottom, limited width ────────── */}
           <div className="order-2 flex items-end justify-center overflow-hidden md:order-1 md:w-5/12 md:self-end lg:w-5/12">
