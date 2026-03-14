@@ -39,7 +39,7 @@ import {
 export function Proof() {
   return (
     <section
-      aria-label="Prova e Autoridade"
+      aria-label="Resultados comprovados"
       className="relative overflow-hidden py-20 md:py-28"
       style={{ background: "#5503af" }}
     >
@@ -148,7 +148,7 @@ export function Proof() {
 
             {/* Eyebrow label */}
             <p className="mb-6 inline-block self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
-              Prova &amp; Autoridade
+              Resultados comprovados
             </p>
 
             {/* ── Authority stat numbers ─────────────────────────────────
