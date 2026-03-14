@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useEffect, useState, useRef } from "react";
 import { useHeaderTheme } from "@/contexts/header-theme-context";
 import { MobileNav } from "@/components/mobile-nav";
 import { cn } from "@/lib/utils";
@@ -17,11 +18,39 @@ const navItems = [
 export function Header() {
   const pathname = usePathname();
   const { theme } = useHeaderTheme();
-
   const isLight = theme === "light";
 
+  const isLandingPage = pathname === "/course";
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    if (!isLandingPage) {
+      setVisible(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const isScrollingUp = currentY < lastScrollY.current;
+      const isAtTop = currentY < 50;
+
+      setVisible(isScrollingUp || isAtTop);
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isLandingPage]);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50",
+        isLandingPage && "transition-transform duration-300 ease-in-out",
+        isLandingPage && !visible && "-translate-y-full"
+      )}
+    >
       <div className="container flex h-16 items-center justify-between md:h-20">
         <Link href="/about" className="flex items-center">
           <Image

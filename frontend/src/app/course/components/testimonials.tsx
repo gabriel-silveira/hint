@@ -249,20 +249,21 @@ export function Testimonials() {
          *          leaving col 3 empty so the pair reads as centred.
          * This avoids a separate grid for row 2 while keeping one grid context.
          */}
-        <div className="hidden md:grid md:grid-cols-3 md:gap-6 lg:gap-7">
-          {/* Row 1: cards 0, 1, 2 */}
+        <div className="hidden md:grid md:grid-cols-6 md:gap-6 lg:gap-7">
+          {/* Row 1: 3 cards, each spanning 2 cols */}
           {TESTIMONIALS.slice(0, 3).map((t) => (
-            <TestimonialCard key={t.id} {...t} />
+            <div key={t.id} className="col-span-2">
+              <TestimonialCard {...t} />
+            </div>
           ))}
 
-          {/* Row 2: cards 3 and 4, centred via col-start */}
-          <div className="col-start-1 md:col-start-1 lg:col-start-1 col-span-1">
+          {/* Row 2: 2 cards centered — offset by 1 col on each side */}
+          <div className="col-start-2 col-span-2">
             <TestimonialCard {...TESTIMONIALS[3]} />
           </div>
-          <div className="col-span-1">
+          <div className="col-span-2">
             <TestimonialCard {...TESTIMONIALS[4]} />
           </div>
-          {/* Third column intentionally empty — creates the centred-pair illusion */}
         </div>
 
         {/* ── Mobile carousel — hidden on desktop ── */}
@@ -316,16 +317,10 @@ export function Testimonials() {
          * 4px hint-purple left-border, italic font-heading bold, centred
          * max-width prose container — a deliberate visual callback.
          */}
-        <div className="mx-auto mt-14 max-w-xl md:mt-16">
-          <div className="flex gap-5">
-            <div
-              aria-hidden="true"
-              className="w-1 shrink-0 rounded-full bg-hint-purple"
-            />
-            <p className="font-heading text-xl font-bold italic leading-snug text-foreground md:text-2xl">
-              Se eles conseguiram destravar, você também consegue.
-            </p>
-          </div>
+        <div className="mx-auto mt-14 max-w-xl text-center md:mt-16">
+          <p className="font-heading text-xl font-bold italic leading-snug text-foreground md:text-2xl">
+            Se eles conseguiram destravar,<br /> você também consegue.
+          </p>
         </div>
 
       </div>
