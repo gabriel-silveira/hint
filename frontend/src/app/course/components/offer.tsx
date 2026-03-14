@@ -383,7 +383,7 @@ export function Offer() {
            * and a more intense glow shadow (opacity 0.50 → 0.60 at peak).
            * This is the biggest CTA on the page — the final persuasion.
            */}
-          <div className="relative inline-block">
+          <div className="relative w-full md:inline-block md:w-auto">
             {/* Pulsing glow layer behind CTA */}
             <div
               aria-hidden="true"
@@ -393,16 +393,16 @@ export function Offer() {
               href="#"
               className="
                 relative z-10
-                inline-block
+                block w-full
                 rounded-xl
                 bg-hint-green
-                px-10 py-5
-                text-lg font-semibold tracking-wide text-white
+                py-5
+                text-center text-lg font-semibold tracking-wide text-white
                 shadow-[0_6px_32px_rgba(0,200,83,0.45)]
                 transition-all duration-200 ease-out
                 hover:scale-[1.03] hover:shadow-[0_8px_48px_rgba(0,200,83,0.65)]
                 active:scale-[0.98]
-                md:px-12 md:py-6 md:text-xl
+                md:inline-block md:w-auto md:px-12 md:py-6 md:text-xl
               "
             >
               Garanta sua vaga no Grupo VIP

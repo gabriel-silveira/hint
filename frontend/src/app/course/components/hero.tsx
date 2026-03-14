@@ -107,7 +107,7 @@ export function Hero() {
 
         {/* CTA area */}
         <div className="mt-12 flex flex-col items-center gap-5 md:mt-14">
-          <div className="relative inline-block">
+          <div className="relative w-full md:inline-block md:w-auto">
             <div
               aria-hidden="true"
               className="absolute inset-0 animate-pulse rounded-xl bg-hint-green opacity-40 blur-xl"
@@ -116,16 +116,16 @@ export function Hero() {
               href="#"
               className="
                 relative z-10
-                inline-block
+                block w-full
                 rounded-xl
                 bg-hint-green
-                px-10 py-5
-                text-lg font-semibold tracking-wide text-white
+                py-5
+                text-center text-lg font-semibold tracking-wide text-white
                 shadow-[0_6px_32px_rgba(0,200,83,0.45)]
                 transition-all duration-200 ease-out
                 hover:scale-[1.03] hover:shadow-[0_8px_48px_rgba(0,200,83,0.65)]
                 active:scale-[0.98]
-                md:px-12 md:py-6 md:text-xl
+                md:inline-block md:w-auto md:px-12 md:py-6 md:text-xl
               "
             >
               Garanta sua vaga no Grupo VIP

@@ -40,7 +40,7 @@ export function Proof() {
   return (
     <section
       aria-label="Resultados comprovados"
-      className="relative pt-8 pb-0 md:pt-12"
+      className="relative pt-16 pb-0 md:pt-20"
       style={{ background: "#5503af" }}
     >
       {/* Curved divider — white curve descending into purple */}
