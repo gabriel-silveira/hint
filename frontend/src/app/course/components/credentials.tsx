@@ -27,7 +27,7 @@ export function Credentials() {
           <p className="mb-4 inline-block rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
             Por que a Larissa?
           </p>
-          <h2 className="font-heading text-3xl font-bold leading-tight text-foreground whitespace-nowrap py-3 sm:text-4xl md:text-5xl md:py-4">
+          <h2 className="font-heading text-2xl font-bold leading-tight text-foreground py-3 sm:text-3xl md:whitespace-nowrap md:text-5xl md:py-4">
             Formação, vivência e experiência real
           </h2>
           <div

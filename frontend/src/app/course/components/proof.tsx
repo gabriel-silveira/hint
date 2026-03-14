@@ -40,20 +40,20 @@ export function Proof() {
   return (
     <section
       aria-label="Resultados comprovados"
-      className="relative pt-0 pb-0"
+      className="relative pt-8 pb-0 md:pt-12"
       style={{ background: "#5503af" }}
     >
       {/* Curved divider — white curve descending into purple */}
       <div className="absolute top-0 left-0 right-0 z-20">
         <svg
-          viewBox="0 0 1440 80"
+          viewBox="0 0 1440 60"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="block w-full"
           preserveAspectRatio="none"
         >
           <path
-            d="M0 0 L0 0 L1440 0 L1440 0 C1080 80 360 80 0 0 Z"
+            d="M0 0 L0 0 L1440 0 L1440 0 C1080 60 360 60 0 0 Z"
             fill="white"
           />
         </svg>
@@ -163,12 +163,12 @@ export function Proof() {
                   <div className="h-0.5 w-8 rounded-full bg-white/40" />
                   <Clock
                     weight="duotone"
-                    size={32}
+                    size={24}
                     className="text-white/70"
                     aria-hidden="true"
                   />
                 </div>
-                <dd className="font-heading text-6xl font-bold leading-none text-white md:text-7xl lg:text-8xl">
+                <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
                   30+
                 </dd>
                 <dt className="text-sm leading-snug text-white/75 md:text-base">
@@ -185,12 +185,12 @@ export function Proof() {
                   <div className="h-0.5 w-8 rounded-full bg-white/40" />
                   <GlobeHemisphereWest
                     weight="duotone"
-                    size={32}
+                    size={24}
                     className="text-white/70"
                     aria-hidden="true"
                   />
                 </div>
-                <dd className="font-heading text-6xl font-bold leading-none text-white md:text-7xl lg:text-8xl">
+                <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
                   11
                 </dd>
                 <dt className="text-sm leading-snug text-white/75 md:text-base">
@@ -207,12 +207,12 @@ export function Proof() {
                   <div className="h-0.5 w-8 rounded-full bg-white/40" />
                   <Chalkboard
                     weight="duotone"
-                    size={32}
+                    size={24}
                     className="text-white/70"
                     aria-hidden="true"
                   />
                 </div>
-                <dd className="font-heading text-6xl font-bold leading-none text-white md:text-7xl lg:text-8xl">
+                <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
                   13
                 </dd>
                 <dt className="text-sm leading-snug text-white/75 md:text-base">

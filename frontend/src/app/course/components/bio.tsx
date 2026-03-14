@@ -77,15 +77,15 @@ export function Bio() {
             </div>
 
             {/* ── Right: Intro text ── */}
-            <div className="relative flex flex-col justify-center bg-white px-2 py-16 md:w-[55%] md:py-24 md:pl-12 lg:pl-16">
+            <div className="relative flex flex-col justify-center px-5 py-12 md:w-[55%] md:bg-white md:py-24 md:pl-12 lg:pl-16">
 
               {/* Eyebrow */}
-              <p className="mb-6 self-start rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
+              <p className="mb-6 self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70 md:border-hint-purple/20 md:bg-hint-purple/5 md:text-hint-purple">
                 Conheça a professora
               </p>
 
               {/* Main heading */}
-              <h2 className="font-heading text-3xl font-bold leading-[1.1] text-foreground sm:text-4xl md:text-5xl">
+              <h2 className="font-heading text-2xl font-bold leading-[1.1] text-white sm:text-3xl md:text-foreground md:text-5xl">
                 Conheça Larissa Rovaron — a professora que vai transformar o seu
                 inglês de verdade
               </h2>
@@ -95,31 +95,31 @@ export function Bio() {
                 aria-hidden="true"
                 className="my-8 flex items-center gap-3 md:my-10"
               >
-                <div className="h-px w-16 bg-hint-purple/20" />
-                <div className="h-1.5 w-1.5 rotate-45 bg-hint-purple/40" />
-                <div className="h-px w-16 bg-hint-purple/20" />
+                <div className="h-px w-16 bg-white/20 md:bg-hint-purple/20" />
+                <div className="h-1.5 w-1.5 rotate-45 bg-white/40 md:bg-hint-purple/40" />
+                <div className="h-px w-16 bg-white/20 md:bg-hint-purple/20" />
               </div>
 
               {/* Intro paragraphs */}
               <div className="flex flex-col gap-5">
-                <p className="text-xl font-semibold leading-relaxed text-foreground md:text-2xl">
+                <p className="text-xl font-semibold leading-relaxed text-white md:text-2xl md:text-foreground">
                   Larissa Rovaron não ensina inglês.
                 </p>
-                <p className="text-lg leading-relaxed text-foreground md:text-xl">
+                <p className="text-lg leading-relaxed text-white/90 md:text-xl md:text-foreground">
                   Ela forma pessoas confiantes para se comunicar em inglês — com
                   pronúncia clara, segurança e naturalidade real.
                 </p>
-                <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+                <p className="text-base leading-relaxed text-white/75 md:text-lg md:text-muted-foreground">
                   Brasileira, 45 anos, fala inglês desde os 9 anos de idade,
                   quando começou a aprender em casa com a própria mãe, também
                   professora de inglês.
                 </p>
-                <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+                <p className="text-base leading-relaxed text-white/75 md:text-lg md:text-muted-foreground">
                   Aos 16 anos, a fluência deixou de ser apenas estudo e virou
                   rotina diária ao conviver com um americano — também English
                   teacher para brasileiros.
                 </p>
-                <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+                <p className="text-base leading-relaxed text-white/75 md:text-lg md:text-muted-foreground">
                   Falar inglês em casa, no trabalho e no dia a dia por décadas faz
                   dela praticamente uma nativa — com algo que poucos cursos
                   oferecem: inglês real, funcional e aplicável.

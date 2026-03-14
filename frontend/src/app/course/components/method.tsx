@@ -327,7 +327,7 @@ export function Method() {
                 />
                 <div className="flex flex-col gap-1">
                   <p className="font-heading font-semibold italic text-white">
-                    Você aprende com autonomia,<br /> mas com suporte humano.
+                    Você aprende com autonomia,<br className="hidden sm:block" /> mas com suporte humano.
                   </p>
                   <p className="text-sm font-bold leading-relaxed text-hint-green">
                     E isso muda tudo.

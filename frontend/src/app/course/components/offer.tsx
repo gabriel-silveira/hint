@@ -270,7 +270,7 @@ export function Offer() {
               por apenas
             </p>
             <p
-              className="font-heading text-6xl font-bold leading-none text-white md:text-7xl lg:text-8xl"
+              className="font-heading text-5xl font-bold leading-none text-white sm:text-6xl md:text-7xl lg:text-8xl"
               style={{
                 textShadow: "0 2px 8px rgba(120,53,0,0.20)",
               }}
@@ -280,7 +280,7 @@ export function Offer() {
           </div>
 
           {/* Clarifying bullets */}
-          <div className="grid grid-cols-2 gap-2 text-sm font-medium tracking-wide text-white/70 md:mx-auto md:max-w-xl md:text-base">
+          <div className="grid grid-cols-1 gap-2 text-sm font-medium tracking-wide text-white/70 sm:grid-cols-2 md:mx-auto md:max-w-xl md:text-base">
             {[
               "Pagamento à vista ou parcelado",
               "Sem mensalidade recorrente",

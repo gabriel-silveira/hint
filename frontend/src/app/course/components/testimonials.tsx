@@ -319,7 +319,7 @@ export function Testimonials() {
          */}
         <div className="mx-auto mt-14 max-w-xl text-center md:mt-16">
           <p className="font-heading text-xl font-bold italic leading-snug text-foreground md:text-2xl">
-            Se eles conseguiram destravar,<br /> você também consegue.
+            Se eles conseguiram destravar,<br className="hidden sm:block" /> você também consegue.
           </p>
         </div>
 
