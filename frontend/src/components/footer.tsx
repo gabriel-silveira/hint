@@ -5,6 +5,8 @@ import {
   WhatsappLogo,
   InstagramLogo,
   FacebookLogo,
+  TiktokLogo,
+  YoutubeLogo,
 } from "@phosphor-icons/react/dist/ssr";
 
 export function Footer() {
@@ -24,14 +26,14 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={18} />
-                <a href="tel:+5511999999999" className="hover:text-foreground transition-colors">
-                  (11) 99999-9999
+                <a href="tel:+5511995566515" className="hover:text-foreground transition-colors">
+                  (11) 99556-6515
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <WhatsappLogo size={18} />
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5511995566515"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors"
@@ -48,9 +50,9 @@ export function Footer() {
             <div className="flex items-start gap-2 text-sm text-muted-foreground">
               <MapPin size={18} className="mt-0.5 shrink-0" />
               <p>
-                Rua Exemplo, 123<br />
-                Bairro Centro<br />
-                São Paulo - SP, 01000-000
+                Avenida Onze de Junho, 694<br />
+                Vila Clementino<br />
+                São Paulo - SP, 04041-002
               </p>
             </div>
           </div>
@@ -60,7 +62,7 @@ export function Footer() {
             <h3 className="font-heading text-lg font-bold mb-4">Redes Sociais</h3>
             <div className="flex items-center gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/hint.language?igsh=MTY1Yjlsd2JxZXJreA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -69,13 +71,31 @@ export function Footer() {
                 <InstagramLogo size={24} />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1GVHrR5xqR/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Facebook"
               >
                 <FacebookLogo size={24} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@hint.language?_r=1&_t=ZS-94gyOzgvEVU"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="TikTok"
+              >
+                <TiktokLogo size={24} />
+              </a>
+              <a
+                href="https://youtube.com/@hint.language?si=yyDDCfzbuAib1fcl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="YouTube"
+              >
+                <YoutubeLogo size={24} />
               </a>
             </div>
           </div>
