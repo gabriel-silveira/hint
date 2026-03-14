@@ -138,6 +138,27 @@ export function Hero() {
             </span>
           </div>
         </div>
+
+        {/* VSL Video placeholder */}
+        <div className="mx-auto mt-14 w-full max-w-3xl md:mt-16">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] backdrop-blur-sm">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20">
+                <svg
+                  aria-hidden="true"
+                  className="ml-1 h-7 w-7 text-white/70"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <p className="text-sm font-medium text-white/40">
+                Vídeo em breve
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
