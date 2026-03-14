@@ -150,18 +150,18 @@ interface CredentialCardProps {
 function CredentialCard({ icon, title, children }: CredentialCardProps) {
   return (
     <div className="flex flex-col rounded-2xl border border-border bg-white p-7 shadow-sm transition-shadow hover:shadow-md md:p-8">
-      {/* Icon */}
-      <div
-        aria-hidden="true"
-        className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-hint-purple/10 text-hint-purple"
-      >
-        {icon}
+      {/* Icon + Title */}
+      <div className="mb-5 flex items-center gap-4">
+        <div
+          aria-hidden="true"
+          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-hint-purple/10 text-hint-purple"
+        >
+          {icon}
+        </div>
+        <h3 className="font-heading text-xl font-bold text-foreground sm:text-2xl">
+          {title}
+        </h3>
       </div>
-
-      {/* Title */}
-      <h3 className="font-heading mb-5 text-2xl font-bold text-foreground sm:text-3xl">
-        {title}
-      </h3>
 
       {/* Left accent rule + content */}
       <div className="flex flex-1 gap-4">

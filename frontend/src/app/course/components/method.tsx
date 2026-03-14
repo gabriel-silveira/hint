@@ -86,11 +86,11 @@ export function Method() {
             <div className="mb-5 flex items-center gap-3">
               <div
                 aria-hidden="true"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-hint-purple/10 text-hint-purple"
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-hint-purple/10 text-hint-purple"
               >
-                <PlayCircle weight="duotone" size={24} />
+                <PlayCircle weight="duotone" size={30} />
               </div>
-              <h3 className="font-heading text-xl font-bold leading-tight text-foreground md:text-2xl">
+              <h3 className="font-heading text-2xl font-bold leading-tight text-foreground sm:text-3xl">
                 Videoaulas Estratégicas
               </h3>
             </div>
@@ -162,11 +162,11 @@ export function Method() {
             <div className="mb-5 flex items-center gap-3">
               <div
                 aria-hidden="true"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-hint-purple/10 text-hint-purple"
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-hint-purple/10 text-hint-purple"
               >
-                <ClipboardText weight="duotone" size={24} />
+                <ClipboardText weight="duotone" size={30} />
               </div>
-              <h3 className="font-heading text-xl font-bold leading-tight text-foreground md:text-2xl">
+              <h3 className="font-heading text-2xl font-bold leading-tight text-foreground sm:text-3xl">
                 Exercícios de Avaliação
               </h3>
             </div>
@@ -260,11 +260,11 @@ export function Method() {
                 <div className="flex items-center gap-3">
                   <div
                     aria-hidden="true"
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/15 text-white"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/15 text-white"
                   >
-                    <WhatsappLogo weight="duotone" size={24} />
+                    <WhatsappLogo weight="duotone" size={30} />
                   </div>
-                  <h3 className="font-heading text-xl font-bold leading-tight text-white md:text-2xl">
+                  <h3 className="font-heading text-2xl font-bold leading-tight text-white sm:text-3xl">
                     Grupo VIP de Mentoria no WhatsApp
                   </h3>
                 </div>
@@ -327,7 +327,7 @@ export function Method() {
                 />
                 <div className="flex flex-col gap-1">
                   <p className="font-heading font-semibold italic text-white">
-                    Você aprende com autonomia, mas com suporte humano.
+                    Você aprende com autonomia,<br /> mas com suporte humano.
                   </p>
                   <p className="text-sm font-bold leading-relaxed text-hint-green">
                     E isso muda tudo.
