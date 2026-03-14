@@ -313,7 +313,29 @@ export function Proof() {
                 </div>
               </div>
 
+              {/* Secondary CTA */}
+              <div className="mt-8 pb-10 text-center md:pb-0 md:text-left">
+                <a
+                  href="#"
+                  className="
+                    block w-full
+                    rounded-xl
+                    bg-hint-green
+                    py-4
+                    text-center text-base font-semibold tracking-wide text-white
+                    shadow-[0_4px_20px_rgba(0,200,83,0.30)]
+                    transition-all duration-200 ease-out
+                    hover:shadow-[0_6px_28px_rgba(0,200,83,0.45)]
+                    active:scale-[0.98]
+                    md:inline-block md:w-auto md:px-10 md:py-4 md:text-lg
+                  "
+                >
+                  Quero começar agora
+                </a>
+              </div>
+
             </div>
+
           </div>
 
         </div>

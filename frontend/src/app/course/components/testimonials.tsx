@@ -321,6 +321,27 @@ export function Testimonials() {
           <p className="font-heading text-xl font-bold italic leading-snug text-foreground md:text-2xl">
             Se eles conseguiram destravar,<br className="hidden sm:block" /> você também consegue.
           </p>
+
+          {/* Secondary CTA */}
+          <div className="mt-10">
+            <a
+              href="#"
+              className="
+                block w-full
+                rounded-xl
+                bg-hint-green
+                py-4
+                text-center text-base font-semibold tracking-wide text-white
+                shadow-[0_4px_20px_rgba(0,200,83,0.30)]
+                transition-all duration-200 ease-out
+                hover:shadow-[0_6px_28px_rgba(0,200,83,0.45)]
+                active:scale-[0.98]
+                md:inline-block md:w-auto md:px-10 md:py-4 md:text-lg
+              "
+            >
+              Garantir minha vaga
+            </a>
+          </div>
         </div>
 
       </div>
