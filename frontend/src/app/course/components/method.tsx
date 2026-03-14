@@ -343,7 +343,7 @@ export function Method() {
         {/* Secondary CTA */}
         <div className="mt-14 text-center md:mt-16">
           <a
-            href="#"
+            href="https://pay.hotmart.com/U100447322U"
             className="
               block w-full
               rounded-xl

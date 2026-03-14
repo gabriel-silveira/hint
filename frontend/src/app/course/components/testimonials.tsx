@@ -325,7 +325,7 @@ export function Testimonials() {
           {/* Secondary CTA */}
           <div className="mt-10">
             <a
-              href="#"
+              href="https://pay.hotmart.com/U100447322U"
               className="
                 block w-full
                 rounded-xl

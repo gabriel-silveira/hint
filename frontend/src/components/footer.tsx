@@ -20,8 +20,8 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <EnvelopeSimple size={18} />
-                <a href="mailto:contato@hint.com.br" className="hover:text-foreground transition-colors">
-                  contato@hint.com.br
+                <a href="mailto:contact@hintlanguage.com" className="hover:text-foreground transition-colors">
+                  contact@hintlanguage.com
                 </a>
               </li>
               <li className="flex items-center gap-2">

@@ -316,7 +316,7 @@ export function Proof() {
               {/* Secondary CTA */}
               <div className="mt-8 pb-10 text-center md:pb-0 md:text-left">
                 <a
-                  href="#"
+                  href="https://pay.hotmart.com/U100447322U"
                   className="
                     block w-full
                     rounded-xl

@@ -390,7 +390,7 @@ export function Offer() {
               className="absolute inset-0 animate-pulse rounded-xl bg-hint-green opacity-40 blur-xl"
             />
             <a
-              href="#"
+              href="https://pay.hotmart.com/U100447322U"
               className="
                 relative z-10
                 block w-full
