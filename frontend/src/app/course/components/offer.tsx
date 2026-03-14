@@ -306,59 +306,64 @@ export function Offer() {
          * hint-green tint and glow — the only large icon in the Offer
          * section, making it unmissable.
          */}
-        <div className="mb-14 rounded-2xl bg-white/12 p-8 ring-2 ring-white/20 md:mb-16 md:p-10">
+        <div
+          className="relative mb-14 overflow-hidden rounded-2xl p-8 md:mb-16 md:p-10"
+          style={{
+            background: "linear-gradient(145deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.06) 100%)",
+            boxShadow: "0 0 0 2px rgba(251,191,36,0.25), 0 8px 40px rgba(0,0,0,0.20), 0 0 60px rgba(251,191,36,0.08)",
+          }}
+        >
+          {/* Subtle amber glow in top-right corner */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full opacity-20"
+            style={{ background: "radial-gradient(circle, #FBBF24 0%, transparent 70%)" }}
+          />
 
-          {/* Guarantee header */}
-          <div className="mb-6 flex flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:text-left">
+          {/* Guarantee header — centered */}
+          <div className="relative z-10 mb-8 flex flex-col items-center gap-4 text-center">
             <div
               aria-hidden="true"
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-hint-green/20 ring-1 ring-hint-green/40"
-              style={{ boxShadow: "0 0 24px rgba(0,200,83,0.25)" }}
+              className="flex h-16 w-16 items-center justify-center rounded-full"
+              style={{
+                background: "linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%)",
+                boxShadow: "0 0 24px rgba(251,191,36,0.35)",
+              }}
             >
               <ShieldCheck
                 weight="duotone"
-                size={32}
-                className="text-hint-green"
+                size={36}
+                className="text-white"
                 aria-hidden="true"
-                style={{ filter: "drop-shadow(0 0 8px rgba(0,200,83,0.60))" }}
               />
             </div>
             <h3 className="font-heading text-2xl font-bold leading-tight text-white md:text-3xl">
               Garantia Incondicional de 7 Dias
             </h3>
-          </div>
-
-          {/*
-           * Left-rule accent inside the guarantee block — the same motif
-           * used in Bio cards, Method cards, Reframing cards, Proof's
-           * closing emphasis, and Testimonials' closing editorial line.
-           * Consistent visual grammar applied inside a different container.
-           */}
-          <div className="flex gap-5">
             <div
               aria-hidden="true"
-              className="w-0.5 shrink-0 rounded-full bg-hint-green/60"
+              className="h-px w-20 rounded-full bg-amber-400/30"
             />
-            <div className="flex flex-col gap-4">
-              <p className="leading-relaxed text-white/80">
-                Entre, assista às aulas, participe do grupo e teste o método.
-              </p>
-              <p className="leading-relaxed text-white/80">
-                Se por qualquer motivo sentir que não é para você, basta
-                solicitar o reembolso dentro de 7 dias.
-              </p>
-              <p className="text-base font-medium text-white/70">
-                Sem perguntas. Sem burocracia.
-              </p>
-              {/*
-               * "O risco é zero." — the single most emphatic line in the
-               * guarantee block. font-heading bold at 2xl mirrors the
-               * Proof section's closing "É resultado." treatment.
-               */}
-              <p className="font-heading text-2xl font-bold text-amber-300 md:text-3xl">
-                O risco é zero.
-              </p>
-            </div>
+          </div>
+
+          {/* Guarantee body — centered prose */}
+          <div className="relative z-10 mx-auto max-w-lg text-center">
+            <p className="leading-relaxed text-white/85">
+              Entre, assista às aulas, participe do grupo e teste o método.
+            </p>
+            <p className="mt-3 leading-relaxed text-white/85">
+              Se por qualquer motivo sentir que não é para você, basta
+              solicitar o reembolso dentro de 7 dias.
+            </p>
+            <p className="mt-4 text-base font-medium text-white/70">
+              Sem perguntas. Sem burocracia.
+            </p>
+            <p
+              className="mt-5 font-heading text-2xl font-bold text-amber-300 md:text-3xl"
+              style={{ textShadow: "0 0 20px rgba(251,191,36,0.25)" }}
+            >
+              O risco é zero.
+            </p>
           </div>
 
         </div>
