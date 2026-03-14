@@ -40,9 +40,24 @@ export function Proof() {
   return (
     <section
       aria-label="Resultados comprovados"
-      className="relative overflow-hidden pt-0 pb-0"
+      className="relative pt-0 pb-0"
       style={{ background: "#5503af" }}
     >
+      {/* Curved divider — white curve descending into purple */}
+      <div className="absolute top-0 left-0 right-0 z-20">
+        <svg
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="block w-full"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 0 L0 0 L1440 0 L1440 0 C1080 80 360 80 0 0 Z"
+            fill="white"
+          />
+        </svg>
+      </div>
 
       {/* ── Background atmosphere ─────────────────────────────────────────── */}
 
@@ -137,13 +152,13 @@ export function Proof() {
              *   number so the figure is the first thing eyes land on.
              * - Three stats sit in a horizontal row on md+; stacked on sm.
              ───────────────────────────────────────────────────────────── */}
-            <dl className="mb-10 grid grid-cols-3 gap-5 sm:gap-8">
+            <dl className="mb-10 grid grid-cols-3 gap-5 text-center sm:gap-8">
 
               {/* Stat 1 — 30+ anos */}
               <div className="flex flex-col gap-2">
                 <div
                   aria-hidden="true"
-                  className="flex items-center gap-2"
+                  className="flex items-center justify-center gap-2"
                 >
                   <div className="h-0.5 w-8 rounded-full bg-white/40" />
                   <Clock
@@ -153,7 +168,7 @@ export function Proof() {
                     aria-hidden="true"
                   />
                 </div>
-                <dd className="font-heading text-5xl font-bold leading-none text-white md:text-6xl lg:text-7xl">
+                <dd className="font-heading text-6xl font-bold leading-none text-white md:text-7xl lg:text-8xl">
                   30+
                 </dd>
                 <dt className="text-sm leading-snug text-white/75 md:text-base">
@@ -165,7 +180,7 @@ export function Proof() {
               <div className="flex flex-col gap-2">
                 <div
                   aria-hidden="true"
-                  className="flex items-center gap-2"
+                  className="flex items-center justify-center gap-2"
                 >
                   <div className="h-0.5 w-8 rounded-full bg-white/40" />
                   <GlobeHemisphereWest
@@ -175,7 +190,7 @@ export function Proof() {
                     aria-hidden="true"
                   />
                 </div>
-                <dd className="font-heading text-5xl font-bold leading-none text-white md:text-6xl lg:text-7xl">
+                <dd className="font-heading text-6xl font-bold leading-none text-white md:text-7xl lg:text-8xl">
                   11
                 </dd>
                 <dt className="text-sm leading-snug text-white/75 md:text-base">
@@ -187,7 +202,7 @@ export function Proof() {
               <div className="flex flex-col gap-2">
                 <div
                   aria-hidden="true"
-                  className="flex items-center gap-2"
+                  className="flex items-center justify-center gap-2"
                 >
                   <div className="h-0.5 w-8 rounded-full bg-white/40" />
                   <Chalkboard
@@ -197,7 +212,7 @@ export function Proof() {
                     aria-hidden="true"
                   />
                 </div>
-                <dd className="font-heading text-5xl font-bold leading-none text-white md:text-6xl lg:text-7xl">
+                <dd className="font-heading text-6xl font-bold leading-none text-white md:text-7xl lg:text-8xl">
                   13
                 </dd>
                 <dt className="text-sm leading-snug text-white/75 md:text-base">
