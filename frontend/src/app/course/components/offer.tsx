@@ -191,11 +191,11 @@ export function Offer() {
               </div>
               <p className="text-base leading-relaxed text-white/65 md:text-lg">
                 Um curso presencial pode variar entre{" "}
-                <span className="font-semibold text-white/50 line-through decoration-white/40">
+                <span className="text-lg font-semibold text-white/60 line-through decoration-white/50 md:text-xl">
                   R$ 600
                 </span>{" "}
                 e{" "}
-                <span className="font-semibold text-white/50 line-through decoration-white/40">
+                <span className="text-lg font-semibold text-white/60 line-through decoration-white/50 md:text-xl">
                   R$ 1.200
                 </span>{" "}
                 por mês.
@@ -221,11 +221,11 @@ export function Offer() {
               </div>
               <p className="text-base leading-relaxed text-white/65 md:text-lg">
                 Um professor particular pode custar entre{" "}
-                <span className="font-semibold text-white/50 line-through decoration-white/40">
+                <span className="text-lg font-semibold text-white/60 line-through decoration-white/50 md:text-xl">
                   R$ 1.200
                 </span>{" "}
                 e{" "}
-                <span className="font-semibold text-white/50 line-through decoration-white/40">
+                <span className="text-lg font-semibold text-white/60 line-through decoration-white/50 md:text-xl">
                   R$ 2.400
                 </span>{" "}
                 por mês.
@@ -255,51 +255,46 @@ export function Offer() {
             Por tudo isso, o acesso ao treinamento completo sai por apenas:
           </p>
 
-          {/*
-           * Monument price — the typographic apex of the entire landing page.
-           * text-8xl at lg+ makes this the largest text anywhere on the page.
-           * The green glow shadow links the price visually to the green CTA
-           * below — price and action share the same saturated accent energy.
-           */}
-          <p
-            className="font-heading text-6xl font-bold leading-none text-white md:text-7xl lg:text-8xl"
+          {/* Monument price — amber celebration card */}
+          <div
+            className="mx-auto mb-8 inline-block rounded-2xl px-6 py-4 md:px-8 md:py-6"
             style={{
-              textShadow: "0 0 60px rgba(255,255,255,0.15), 0 0 120px rgba(139,0,255,0.40)",
+              background: "linear-gradient(135deg, #F59E0B 0%, #FBBF24 60%, #FCD34D 100%)",
+              boxShadow: "0 8px 40px rgba(245,158,11,0.30), 0 0 80px rgba(251,191,36,0.15)",
             }}
           >
-            R$ 39,90
-          </p>
-
-          {/*
-           * Thin green accent rule below the price — the single green element
-           * in this cluster. Mirrors the Proof section's stat green rules but
-           * centred and wider, befitting the price monument scale.
-           */}
-          <div
-            aria-hidden="true"
-            className="mx-auto mt-5 mb-8 h-0.5 w-24 rounded-full bg-hint-green"
-            style={{ boxShadow: "0 0 16px rgba(0,200,83,0.60)" }}
-          />
+            <p
+              className="mb-2 text-sm font-medium uppercase tracking-widest"
+              style={{ color: "rgba(120,53,0,0.70)" }}
+            >
+              por apenas
+            </p>
+            <p
+              className="font-heading text-6xl font-bold leading-none text-white md:text-7xl lg:text-8xl"
+              style={{
+                textShadow: "0 2px 8px rgba(120,53,0,0.20)",
+              }}
+            >
+              R$ 39,90
+            </p>
+          </div>
 
           {/* Clarifying bullets */}
-          <ul
-            role="list"
-            className="flex flex-col items-center gap-2"
-          >
+          <div className="grid grid-cols-2 gap-2 text-sm font-medium tracking-wide text-white/70 md:mx-auto md:max-w-xl md:text-base">
             {[
-              "Pagamento à vista ou parcelado.",
-              "Sem mensalidade recorrente.",
-              "Sem taxas escondidas.",
-              "Sem surpresas.",
+              "Pagamento à vista ou parcelado",
+              "Sem mensalidade recorrente",
+              "Sem taxas escondidas",
+              "Sem surpresas",
             ].map((line) => (
-              <li
+              <span
                 key={line}
-                className="text-base text-white/65 md:text-lg"
+                className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-1.5 text-center"
               >
                 {line}
-              </li>
+              </span>
             ))}
-          </ul>
+          </div>
         </div>
 
         {/* ── 5. Guarantee block ───────────────────────────────────────── */}
@@ -360,7 +355,7 @@ export function Offer() {
                * guarantee block. font-heading bold at 2xl mirrors the
                * Proof section's closing "É resultado." treatment.
                */}
-              <p className="font-heading text-2xl font-bold text-white md:text-3xl">
+              <p className="font-heading text-2xl font-bold text-amber-300 md:text-3xl">
                 O risco é zero.
               </p>
             </div>
@@ -369,7 +364,10 @@ export function Offer() {
         </div>
 
         {/* ── 6. Final CTA ─────────────────────────────────────────────── */}
-        <div className="text-center">
+        <div className="mt-8 text-center md:mt-12">
+          <div className="mb-6 inline-block rounded-full bg-amber-400 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-900 md:mb-8">
+            Oferta por tempo limitado
+          </div>
           <h2 className="font-heading mb-8 text-3xl font-bold leading-tight text-white md:text-4xl">
             Está pronto para destravar seu inglês?
           </h2>
@@ -380,23 +378,31 @@ export function Offer() {
            * and a more intense glow shadow (opacity 0.50 → 0.60 at peak).
            * This is the biggest CTA on the page — the final persuasion.
            */}
-          <a
-            href="#"
-            className="
-              inline-block
-              rounded-xl
-              bg-hint-green
-              px-10 py-5
-              text-lg font-semibold tracking-wide text-white
-              shadow-[0_6px_32px_rgba(0,200,83,0.45)]
-              transition-all duration-200 ease-out
-              hover:scale-[1.03] hover:shadow-[0_8px_48px_rgba(0,200,83,0.65)]
-              active:scale-[0.98]
-              md:px-12 md:py-6 md:text-xl
-            "
-          >
-            Garanta sua vaga no Grupo VIP
-          </a>
+          <div className="relative inline-block">
+            {/* Pulsing glow layer behind CTA */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 animate-pulse rounded-xl bg-hint-green opacity-40 blur-xl"
+            />
+            <a
+              href="#"
+              className="
+                relative z-10
+                inline-block
+                rounded-xl
+                bg-hint-green
+                px-10 py-5
+                text-lg font-semibold tracking-wide text-white
+                shadow-[0_6px_32px_rgba(0,200,83,0.45)]
+                transition-all duration-200 ease-out
+                hover:scale-[1.03] hover:shadow-[0_8px_48px_rgba(0,200,83,0.65)]
+                active:scale-[0.98]
+                md:px-12 md:py-6 md:text-xl
+              "
+            >
+              Garanta sua vaga no Grupo VIP
+            </a>
+          </div>
 
           {/* Trust micro-copy — mirrors Hero's sub-CTA line */}
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs font-medium tracking-wide text-white/70">
