@@ -18,21 +18,21 @@ export function Credentials() {
   return (
     <section
       aria-label="Credenciais da professora"
-      className="flex min-h-screen items-center bg-secondary py-20 md:py-28"
+      className="flex min-h-screen items-center bg-secondary py-14 md:py-20"
     >
       <div className="container">
 
         {/* ── Section header ── */}
-        <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
+        <div className="mb-8 text-center md:mb-12">
           <p className="mb-4 inline-block rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
             Por que a Larissa?
           </p>
-          <h2 className="font-heading text-3xl font-bold leading-tight text-foreground whitespace-nowrap sm:text-4xl md:text-5xl">
+          <h2 className="font-heading text-3xl font-bold leading-tight text-foreground whitespace-nowrap py-3 sm:text-4xl md:text-5xl md:py-4">
             Formação, vivência e experiência real
           </h2>
           <div
             aria-hidden="true"
-            className="mx-auto mt-6 flex items-center justify-center gap-3"
+            className="mx-auto mt-4 flex items-center justify-center gap-3"
           >
             <div className="h-px w-12 bg-hint-purple/20" />
             <div className="h-1.5 w-1.5 rotate-45 bg-hint-purple/40" />
