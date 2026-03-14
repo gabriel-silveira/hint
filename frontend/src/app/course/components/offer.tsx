@@ -310,14 +310,14 @@ export function Offer() {
           className="relative mb-14 overflow-hidden rounded-2xl p-8 md:mb-16 md:p-10"
           style={{
             background: "linear-gradient(145deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.06) 100%)",
-            boxShadow: "0 0 0 2px rgba(251,191,36,0.25), 0 8px 40px rgba(0,0,0,0.20), 0 0 60px rgba(251,191,36,0.08)",
+            boxShadow: "0 0 0 2px rgba(255,255,255,0.15), 0 8px 40px rgba(0,0,0,0.20), 0 0 60px rgba(255,255,255,0.06)",
           }}
         >
           {/* Subtle amber glow in top-right corner */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full opacity-20"
-            style={{ background: "radial-gradient(circle, #FBBF24 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, #ffffff 0%, transparent 70%)" }}
           />
 
           {/* Guarantee header — centered */}
@@ -342,7 +342,7 @@ export function Offer() {
             </h3>
             <div
               aria-hidden="true"
-              className="h-px w-20 rounded-full bg-amber-400/30"
+              className="h-px w-20 rounded-full bg-white/30"
             />
           </div>
 
