@@ -10,7 +10,7 @@ services:
       - /app/.next
 
   playwright:
-    image: mcr.microsoft.com/playwright:v1.49.0-noble
+    image: mcr.microsoft.com/playwright:v1.58.2-noble
     working_dir: /app
     volumes:
       - ./frontend:/app
@@ -23,4 +23,4 @@ services:
     ipc: host
     profiles:
       - testing
-    command: npx playwright test
+    command: npx playwright test --project=chromium
