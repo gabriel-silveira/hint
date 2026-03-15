@@ -10,14 +10,15 @@ import { Testimonials } from "./components/testimonials";
 import { Offer } from "./components/offer";
 
 export const metadata: Metadata = {
-  title: "O Curso | HINT",
+  title: "Curso de Inglês — Método Larissa Rovaron",
   description:
-    "Destrave seu inglês de uma vez por todas com o Método Larissa Rovaron. Videoaulas, exercícios e mentoria no WhatsApp por apenas R$ 39,90.",
+    "Destrave seu inglês de uma vez por todas com o Método Larissa Rovaron. Videoaulas, exercícios e mentoria no WhatsApp.",
   openGraph: {
-    title: "Destrave seu inglês de uma vez por todas | HINT",
+    title: "Curso de Inglês — Método Larissa Rovaron",
     description:
-      "Método estruturado com suporte real e acompanhamento humano.",
+      "Destrave seu inglês de uma vez por todas com o Método Larissa Rovaron. Videoaulas, exercícios e mentoria no WhatsApp.",
     images: [{ url: "/larissa-frontal.png" }],
+    type: "website",
   },
 };
 

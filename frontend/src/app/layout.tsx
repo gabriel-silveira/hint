@@ -20,10 +20,31 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "HINT",
-  description: "HINT Language Services",
+  metadataBase: new URL("https://hintlanguage.com"),
+  title: {
+    template: "%s | HINT Language",
+    default: "HINT Language — Serviços Profissionais de Inglês",
+  },
+  description:
+    "Tradução, legendagem, dublagem, treinamentos e coaching em inglês. Soluções linguísticas profissionais em São Paulo.",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "HINT Language — Serviços Profissionais de Inglês",
+    description:
+      "Tradução, legendagem, dublagem, treinamentos e coaching em inglês. Soluções linguísticas profissionais em São Paulo.",
+    images: [{ url: "/hint-logo-icon.png" }],
+    locale: "pt_BR",
+    type: "website",
+    siteName: "HINT Language",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HINT Language — Serviços Profissionais de Inglês",
+    description:
+      "Tradução, legendagem, dublagem, treinamentos e coaching em inglês. Soluções linguísticas profissionais em São Paulo.",
+    images: ["/hint-logo-icon.png"],
   },
 };
 
