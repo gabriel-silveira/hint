@@ -20,13 +20,13 @@ export function Header() {
   const { theme } = useHeaderTheme();
   const isLight = theme === "light";
 
-  const isLandingPage = pathname === "/course";
+  const hasScrollBehavior = pathname === "/course" || pathname === "/service" || pathname === "/contact";
   const [visible, setVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
-    if (!isLandingPage) {
+    if (!hasScrollBehavior) {
       setVisible(true);
       setScrolled(false);
       return;
@@ -44,14 +44,18 @@ export function Header() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isLandingPage]);
+  }, [hasScrollBehavior]);
+
+  const scrolledOverlay = pathname === "/course"
+    ? "bg-black/50 backdrop-blur-lg shadow-lg"
+    : "bg-white/90 backdrop-blur-lg shadow-lg";
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isLandingPage && !visible && "-translate-y-full",
-        isLandingPage && scrolled && "bg-black/50 backdrop-blur-lg shadow-lg"
+        hasScrollBehavior && !visible && "-translate-y-full",
+        hasScrollBehavior && scrolled && scrolledOverlay
       )}
     >
       <div className="container flex h-16 items-center justify-between md:h-20">
