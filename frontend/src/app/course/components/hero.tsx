@@ -113,7 +113,7 @@ export function Hero() {
               className="absolute inset-0 animate-pulse rounded-xl bg-hint-green opacity-40 blur-xl"
             />
             <a
-              href="https://pay.hotmart.com/U100447322U"
+              href="https://pay.kiwify.com.br/50zCaYu"
               className="
                 relative z-10
                 block w-full
