@@ -15,7 +15,7 @@ import { useHeaderTheme } from "@/contexts/header-theme-context";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/about", label: "Quem Somos" },
+  { href: "/", label: "Quem Somos" },
   { href: "/course", label: "O Curso" },
   { href: "/service", label: "Serviço" },
   { href: "/contact", label: "Contato" },

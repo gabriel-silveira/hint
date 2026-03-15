@@ -9,7 +9,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/about", label: "Quem Somos" },
+  { href: "/", label: "Quem Somos" },
   { href: "/course", label: "O Curso" },
   { href: "/service", label: "Serviço" },
   { href: "/contact", label: "Contato" },
@@ -55,7 +55,7 @@ export function Header() {
       )}
     >
       <div className="container flex h-16 items-center justify-between md:h-20">
-        <Link href="/about" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src="/hint-logo-icon.png"
             alt="HINT"
