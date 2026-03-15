@@ -4,17 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-HINT is a content and design specification repository for a sales landing page promoting Larissa Rovaron's English teaching method. The target audience is Brazilian adults who want to improve English pronunciation and speaking confidence. The product is an online course with WhatsApp group mentorship priced at R$ 39.90.
-
-**There is no application code yet.** This repo contains only documentation and assets that will guide the implementation of the landing page.
+HINT is a corporate website for HINT Language, a language services company based in São Paulo. The site includes an About page, a Course landing page (promoting Larissa Rovaron's English teaching method), a Services page, and a Contact page. The target audience is Brazilian adults and businesses seeking professional English language services.
 
 ## Repository Structure
 
+- `frontend/` — Next.js 15 application (Tailwind CSS, Phosphor Icons, Radix UI)
 - `docs/hint-design-system.md` — Visual identity: colors, typography, principles
 - `docs/hint-orientacoes-layout.md` — Layout strategy per section (design directives)
 - `docs/landing-page-copy.md` — Complete landing page text content (7 sections)
+- `docs/issues/` — Issue specifications and deployment plans
 - `assets/Lara Bio.md` — Teacher biography (source material)
 - `assets/Logos, Profile Pics, Watermarks/` — Brand imagery (logos, photos, watermarks)
+- `amplify.yml` — AWS Amplify build configuration for deployment
+- `Dockerfile` / `docker-compose.yml` — Docker development environment
 
 ## Design System Reference
 
