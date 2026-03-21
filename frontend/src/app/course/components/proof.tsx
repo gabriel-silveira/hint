@@ -256,7 +256,7 @@ export function Proof() {
                 <div className="h-px flex-1 bg-white/15" />
               </div>
 
-              <ScrollReveal delay={0.3}>
+              <ScrollReveal delay={0.3} className="flex flex-col gap-5">
                 <p className="text-lg leading-relaxed text-white/90 md:text-xl">
                   Você não está aprendendo com alguém que apenas estudou inglês.
                 </p>
