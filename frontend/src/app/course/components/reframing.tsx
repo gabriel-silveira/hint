@@ -1,4 +1,5 @@
 import { MicrophoneSlash, ChatSlash, ShieldWarning } from "@phosphor-icons/react/dist/ssr";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 /**
  * Reframing section — Server Component
@@ -51,14 +52,18 @@ export function Reframing() {
         <div className="mx-auto max-w-3xl">
 
           {/* ── Eyebrow label ── */}
-          <p className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
-            Antes de continuar
-          </p>
+          <ScrollReveal delay={0.1}>
+            <p className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
+              Antes de continuar
+            </p>
+          </ScrollReveal>
 
           {/* ── H2: the reframe headline ── */}
-          <h2 className="font-heading text-3xl font-bold leading-tight text-white md:text-[2.1rem]">
-            O problema não é você. É o jeito que te ensinaram.
-          </h2>
+          <ScrollReveal delay={0.2}>
+            <h2 className="font-heading text-3xl font-bold leading-tight text-white md:text-[2.1rem]">
+              O problema não é você. É o jeito que te ensinaram.
+            </h2>
+          </ScrollReveal>
 
           {/* ── Intro line ── */}
           <p className="mt-8 text-lg leading-relaxed text-white/85">
@@ -66,20 +71,31 @@ export function Reframing() {
           </p>
 
           {/* ── Pain point cards ── */}
-          <ul className="mt-6 flex flex-col gap-4" role="list">
-            <PainPoint
-              icon={<MicrophoneSlash weight="duotone" size={22} />}
-              text="Estudou por anos… mas ainda trava na hora de falar"
-            />
-            <PainPoint
-              icon={<ChatSlash weight="duotone" size={22} />}
-              text="Entende quando lê… mas não consegue formar frases com naturalidade"
-            />
-            <PainPoint
-              icon={<ShieldWarning weight="duotone" size={22} />}
-              text="Sabe regras gramaticais… mas sente insegurança ao se comunicar"
-            />
-          </ul>
+          {/*
+            Each PainPoint renders a <li>. To allow ScrollReveal (<div>) wrappers
+            as direct children while preserving list semantics, the container uses
+            role="list" on a <div> instead of <ul>.
+          */}
+          <div className="mt-6 flex flex-col gap-4" role="list">
+            <ScrollReveal delay={0.3}>
+              <PainPoint
+                icon={<MicrophoneSlash weight="duotone" size={22} />}
+                text="Estudou por anos… mas ainda trava na hora de falar"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={0.4}>
+              <PainPoint
+                icon={<ChatSlash weight="duotone" size={22} />}
+                text="Entende quando lê… mas não consegue formar frases com naturalidade"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={0.5}>
+              <PainPoint
+                icon={<ShieldWarning weight="duotone" size={22} />}
+                text="Sabe regras gramaticais… mas sente insegurança ao se comunicar"
+              />
+            </ScrollReveal>
+          </div>
 
           {/* ── Divider ── */}
           <div
@@ -88,9 +104,11 @@ export function Reframing() {
           />
 
           {/* ── Transition: Respire ── */}
-          <p className="mb-8 font-heading text-2xl font-semibold italic text-white">
-            Respire.
-          </p>
+          <ScrollReveal delay={0.4}>
+            <p className="mb-8 font-heading text-2xl font-semibold italic text-white">
+              Respire.
+            </p>
+          </ScrollReveal>
 
           {/* ── Cause statement ── */}
           <p className="leading-relaxed text-white/85">
@@ -98,18 +116,20 @@ export function Reframing() {
           </p>
 
           {/* ── Key phrase — the visual pivot ── */}
-          <div className="mt-4 mb-2">
-            <p
-              className="font-heading text-2xl font-bold leading-tight text-amber-300 md:text-3xl"
-            >
-              Foi excesso de método errado.
-            </p>
-            {/* Fine rule beneath the key phrase */}
-            <div
-              aria-hidden="true"
-              className="mt-3 h-px w-full rounded-full bg-amber-300/30"
-            />
-          </div>
+          <ScrollReveal delay={0.5}>
+            <div className="mt-4 mb-2">
+              <p
+                className="font-heading text-2xl font-bold leading-tight text-amber-300 md:text-3xl"
+              >
+                Foi excesso de método errado.
+              </p>
+              {/* Fine rule beneath the key phrase */}
+              <div
+                aria-hidden="true"
+                className="mt-3 h-px w-full rounded-full bg-amber-300/30"
+              />
+            </div>
+          </ScrollReveal>
 
           {/* ── Explanation paragraphs ── */}
           <div className="mt-8 flex flex-col gap-4">
@@ -138,18 +158,24 @@ export function Reframing() {
 
           {/* ── "Precisa de…" trio — stacked with progressive left-border ── */}
           <div className="mt-8 flex flex-col gap-0">
-            <NeedLine
-              weight="light"
-              text="Precisa de clareza."
-            />
-            <NeedLine
-              weight="medium"
-              text="Precisa de direção."
-            />
-            <NeedLine
-              weight="bold"
-              text="Precisa de um método que destrave sua pronúncia e sua confiança ao mesmo tempo."
-            />
+            <ScrollReveal delay={0.5}>
+              <NeedLine
+                weight="light"
+                text="Precisa de clareza."
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={0.55}>
+              <NeedLine
+                weight="medium"
+                text="Precisa de direção."
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={0.6}>
+              <NeedLine
+                weight="bold"
+                text="Precisa de um método que destrave sua pronúncia e sua confiança ao mesmo tempo."
+              />
+            </ScrollReveal>
           </div>
 
         </div>

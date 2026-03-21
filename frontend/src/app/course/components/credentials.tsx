@@ -3,6 +3,7 @@ import {
   GlobeHemisphereWest,
   Briefcase,
 } from "@phosphor-icons/react/dist/ssr";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 /**
  * Credentials section — Server Component
@@ -24,36 +25,106 @@ export function Credentials() {
 
         {/* ── Section header ── */}
         <div className="mb-8 text-center md:mb-12">
-          <p className="mb-4 inline-block rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
-            Por que a Larissa?
-          </p>
-          <h2 className="font-heading text-2xl font-bold leading-tight text-foreground py-3 sm:text-3xl md:whitespace-nowrap md:text-5xl md:py-4">
-            Formação, vivência e experiência real
-          </h2>
-          <div
-            aria-hidden="true"
-            className="mx-auto mt-4 flex items-center justify-center gap-3"
-          >
-            <div className="h-px w-12 bg-hint-purple/20" />
-            <div className="h-1.5 w-1.5 rotate-45 bg-hint-purple/40" />
-            <div className="h-px w-12 bg-hint-purple/20" />
-          </div>
+          <ScrollReveal delay={0.1}>
+            <p className="mb-4 inline-block rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
+              Por que a Larissa?
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <h2 className="font-heading text-2xl font-bold leading-tight text-foreground py-3 sm:text-3xl md:whitespace-nowrap md:text-5xl md:py-4">
+              Formação, vivência e experiência real
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.3}>
+            <div
+              aria-hidden="true"
+              className="mx-auto mt-4 flex items-center justify-center gap-3"
+            >
+              <div className="h-px w-12 bg-hint-purple/20" />
+              <div className="h-1.5 w-1.5 rotate-45 bg-hint-purple/40" />
+              <div className="h-px w-12 bg-hint-purple/20" />
+            </div>
+          </ScrollReveal>
         </div>
 
         {/* ── Card grid ── */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
 
           {/* Formação Acadêmica */}
-          <CredentialCard
-            icon={<GraduationCap weight="duotone" size={36} />}
-            title="Formação Acadêmica"
-          >
-            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              Graduada em:
-            </p>
-            <ul className="mt-3 flex flex-col gap-2" role="list">
-              {["Magistério", "Comunicação e Marketing", "Pedagogia"].map(
-                (item) => (
+          <ScrollReveal delay={0.3} className="h-full">
+            <CredentialCard
+              icon={<GraduationCap weight="duotone" size={36} />}
+              title="Formação Acadêmica"
+            >
+              <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+                Graduada em:
+              </p>
+              <ul className="mt-3 flex flex-col gap-2" role="list">
+                {["Magistério", "Comunicação e Marketing", "Pedagogia"].map(
+                  (item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2.5 text-base text-muted-foreground md:text-lg"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="h-1.5 w-1.5 shrink-0 rounded-full bg-hint-purple"
+                      />
+                      {item}
+                    </li>
+                  )
+                )}
+              </ul>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+                Ela une didática, estratégia e comunicação clara em um método
+                simples e eficiente.
+              </p>
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground md:text-lg">
+                Além do Português, é fluente em Inglês e Espanhol e
+                atualmente estuda Alemão — mantendo-se sempre no lugar do
+                aluno.
+              </p>
+            </CredentialCard>
+          </ScrollReveal>
+
+          {/* Experiência Internacional */}
+          <ScrollReveal delay={0.4} className="h-full">
+            <CredentialCard
+              icon={<GlobeHemisphereWest weight="duotone" size={36} />}
+              title="Experiência Internacional"
+            >
+              <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+                Já visitou 11 países e morou fora do Brasil em lugares como
+                Argentina, Espanha e Alemanha.
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
+                Essa vivência se reflete diretamente em suas aulas: o aluno
+                aprende não apenas regras, mas como o idioma é usado no mundo
+                real.
+              </p>
+            </CredentialCard>
+          </ScrollReveal>
+
+          {/* Experiência Profissional */}
+          <ScrollReveal delay={0.5} className="h-full">
+            <CredentialCard
+              icon={<Briefcase weight="duotone" size={36} />}
+              title="Experiência Profissional"
+            >
+              <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+                São 13 anos como English Teacher e 13 anos de experiência em
+                Marketing.
+              </p>
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground md:text-lg">
+                No currículo estão instituições respeitadas de São Paulo como:
+              </p>
+              <ul className="mt-3 flex flex-col gap-2" role="list">
+                {[
+                  "Colégio Batista Brasileiro",
+                  "Wizard",
+                  "Stance Dual",
+                  "Espaço Lúdico",
+                ].map((item) => (
                   <li
                     key={item}
                     className="flex items-center gap-2.5 text-base text-muted-foreground md:text-lg"
@@ -64,73 +135,15 @@ export function Credentials() {
                     />
                     {item}
                   </li>
-                )
-              )}
-            </ul>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Ela une didática, estratégia e comunicação clara em um método
-              simples e eficiente.
-            </p>
-            <p className="mt-2 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Além do Português, é fluente em Inglês e Espanhol e
-              atualmente estuda Alemão — mantendo-se sempre no lugar do
-              aluno.
-            </p>
-          </CredentialCard>
-
-          {/* Experiência Internacional */}
-          <CredentialCard
-            icon={<GlobeHemisphereWest weight="duotone" size={36} />}
-            title="Experiência Internacional"
-          >
-            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              Já visitou 11 países e morou fora do Brasil em lugares como
-              Argentina, Espanha e Alemanha.
-            </p>
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Essa vivência se reflete diretamente em suas aulas: o aluno
-              aprende não apenas regras, mas como o idioma é usado no mundo
-              real.
-            </p>
-          </CredentialCard>
-
-          {/* Experiência Profissional */}
-          <CredentialCard
-            icon={<Briefcase weight="duotone" size={36} />}
-            title="Experiência Profissional"
-          >
-            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              São 13 anos como English Teacher e 13 anos de experiência em
-              Marketing.
-            </p>
-            <p className="mt-2 text-base leading-relaxed text-muted-foreground md:text-lg">
-              No currículo estão instituições respeitadas de São Paulo como:
-            </p>
-            <ul className="mt-3 flex flex-col gap-2" role="list">
-              {[
-                "Colégio Batista Brasileiro",
-                "Wizard",
-                "Stance Dual",
-                "Espaço Lúdico",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-2.5 text-base text-muted-foreground md:text-lg"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="h-1.5 w-1.5 shrink-0 rounded-full bg-hint-purple"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Sua especialidade é pronúncia e alfabetização em língua
-              estrangeira — ajudando alunos de todas as idades a falarem
-              com segurança e confiança.
-            </p>
-          </CredentialCard>
+                ))}
+              </ul>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+                Sua especialidade é pronúncia e alfabetização em língua
+                estrangeira — ajudando alunos de todas as idades a falarem
+                com segurança e confiança.
+              </p>
+            </CredentialCard>
+          </ScrollReveal>
         </div>
 
       </div>
@@ -149,7 +162,7 @@ interface CredentialCardProps {
 
 function CredentialCard({ icon, title, children }: CredentialCardProps) {
   return (
-    <div className="flex flex-col rounded-2xl border border-border bg-white p-7 shadow-sm transition-shadow hover:shadow-md md:p-8">
+    <div className="flex h-full flex-col rounded-2xl border border-border bg-white p-7 shadow-sm transition-shadow hover:shadow-md md:p-8">
       {/* Icon + Title */}
       <div className="mb-5 flex items-center gap-4">
         <div

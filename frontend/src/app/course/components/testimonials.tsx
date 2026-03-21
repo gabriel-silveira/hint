@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Star } from "@phosphor-icons/react";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 /**
  * Testimonials — Client Component (carousel requires interactivity)
@@ -221,24 +222,30 @@ export function Testimonials() {
         <div className="mx-auto mb-14 max-w-3xl text-center md:mb-16">
 
           {/* Eyebrow */}
-          <p className="mb-5 inline-block rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
-            Resultados reais
-          </p>
+          <ScrollReveal delay={0.1}>
+            <p className="mb-5 inline-block rounded-full border border-hint-purple/20 bg-hint-purple/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-hint-purple">
+              Resultados reais
+            </p>
+          </ScrollReveal>
 
           {/* H2 */}
-          <h2 className="font-heading text-3xl font-bold leading-tight text-foreground md:text-4xl">
-            Veja o que nossos alunos dizem
-          </h2>
+          <ScrollReveal delay={0.2}>
+            <h2 className="font-heading text-3xl font-bold leading-tight text-foreground md:text-4xl">
+              Veja o que nossos alunos dizem
+            </h2>
+          </ScrollReveal>
 
           {/* Decorative rule with centred diamond — mirrors Method section header */}
-          <div
-            aria-hidden="true"
-            className="my-7 flex items-center justify-center gap-3"
-          >
-            <div className="h-px w-16 bg-hint-purple/20" />
-            <div className="h-1.5 w-1.5 rotate-45 bg-hint-purple/40" />
-            <div className="h-px w-16 bg-hint-purple/20" />
-          </div>
+          <ScrollReveal delay={0.3}>
+            <div
+              aria-hidden="true"
+              className="my-7 flex items-center justify-center gap-3"
+            >
+              <div className="h-px w-16 bg-hint-purple/20" />
+              <div className="h-1.5 w-1.5 rotate-45 bg-hint-purple/40" />
+              <div className="h-px w-16 bg-hint-purple/20" />
+            </div>
+          </ScrollReveal>
         </div>
 
         {/* ── Desktop grid: 3 + 2 layout — hidden on mobile ── */}
@@ -249,67 +256,69 @@ export function Testimonials() {
          *          leaving col 3 empty so the pair reads as centred.
          * This avoids a separate grid for row 2 while keeping one grid context.
          */}
-        <div className="hidden md:grid md:grid-cols-6 md:gap-6 lg:gap-7">
-          {/* Row 1: 3 cards, each spanning 2 cols */}
-          {TESTIMONIALS.slice(0, 3).map((t) => (
-            <div key={t.id} className="col-span-2">
-              <TestimonialCard {...t} />
+        <ScrollReveal delay={0.3}>
+          <div className="hidden md:grid md:grid-cols-6 md:gap-6 lg:gap-7">
+            {/* Row 1: 3 cards, each spanning 2 cols */}
+            {TESTIMONIALS.slice(0, 3).map((t) => (
+              <div key={t.id} className="col-span-2">
+                <TestimonialCard {...t} />
+              </div>
+            ))}
+
+            {/* Row 2: 2 cards centered — offset by 1 col on each side */}
+            <div className="col-start-2 col-span-2">
+              <TestimonialCard {...TESTIMONIALS[3]} />
             </div>
-          ))}
-
-          {/* Row 2: 2 cards centered — offset by 1 col on each side */}
-          <div className="col-start-2 col-span-2">
-            <TestimonialCard {...TESTIMONIALS[3]} />
+            <div className="col-span-2">
+              <TestimonialCard {...TESTIMONIALS[4]} />
+            </div>
           </div>
-          <div className="col-span-2">
-            <TestimonialCard {...TESTIMONIALS[4]} />
-          </div>
-        </div>
 
-        {/* ── Mobile carousel — hidden on desktop ── */}
-        <div className="md:hidden">
-          {/* Embla viewport */}
-          <div
-            ref={emblaRef}
-            className="overflow-hidden"
-            aria-label="Carrossel de depoimentos"
-          >
-            <div className="flex gap-4">
-              {TESTIMONIALS.map((t) => (
-                <div
-                  key={t.id}
-                  /* 85% slide width with a right-peek for affordance */
-                  className="min-w-0 flex-[0_0_85%]"
-                >
-                  <TestimonialCard {...t} />
-                </div>
+          {/* ── Mobile carousel — hidden on desktop ── */}
+          <div className="md:hidden">
+            {/* Embla viewport */}
+            <div
+              ref={emblaRef}
+              className="overflow-hidden"
+              aria-label="Carrossel de depoimentos"
+            >
+              <div className="flex gap-4">
+                {TESTIMONIALS.map((t) => (
+                  <div
+                    key={t.id}
+                    /* 85% slide width with a right-peek for affordance */
+                    className="min-w-0 flex-[0_0_85%]"
+                  >
+                    <TestimonialCard {...t} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Dot navigation */}
+            <div
+              role="tablist"
+              aria-label="Navegação do carrossel"
+              className="mt-8 flex items-center justify-center gap-2.5"
+            >
+              {scrollSnaps.map((_, index) => (
+                <button
+                  key={index}
+                  role="tab"
+                  aria-label={`Depoimento ${index + 1} de ${scrollSnaps.length}`}
+                  aria-selected={index === selectedIndex}
+                  onClick={() => scrollTo(index)}
+                  className={[
+                    "h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hint-purple focus-visible:ring-offset-2",
+                    index === selectedIndex
+                      ? "w-6 bg-hint-purple"
+                      : "w-2 bg-hint-purple/25 hover:bg-hint-purple/50",
+                  ].join(" ")}
+                />
               ))}
             </div>
           </div>
-
-          {/* Dot navigation */}
-          <div
-            role="tablist"
-            aria-label="Navegação do carrossel"
-            className="mt-8 flex items-center justify-center gap-2.5"
-          >
-            {scrollSnaps.map((_, index) => (
-              <button
-                key={index}
-                role="tab"
-                aria-label={`Depoimento ${index + 1} de ${scrollSnaps.length}`}
-                aria-selected={index === selectedIndex}
-                onClick={() => scrollTo(index)}
-                className={[
-                  "h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hint-purple focus-visible:ring-offset-2",
-                  index === selectedIndex
-                    ? "w-6 bg-hint-purple"
-                    : "w-2 bg-hint-purple/25 hover:bg-hint-purple/50",
-                ].join(" ")}
-              />
-            ))}
-          </div>
-        </div>
+        </ScrollReveal>
 
         {/* ── Closing editorial line ── */}
         {/*
@@ -318,29 +327,33 @@ export function Testimonials() {
          * max-width prose container — a deliberate visual callback.
          */}
         <div className="mx-auto mt-14 max-w-xl text-center md:mt-16">
-          <p className="font-heading text-xl font-bold italic leading-snug text-foreground md:text-2xl">
-            Se eles conseguiram destravar,<br className="hidden sm:block" /> você também consegue.
-          </p>
+          <ScrollReveal delay={0.5}>
+            <p className="font-heading text-xl font-bold italic leading-snug text-foreground md:text-2xl">
+              Se eles conseguiram destravar,<br className="hidden sm:block" /> você também consegue.
+            </p>
+          </ScrollReveal>
 
           {/* Secondary CTA */}
           <div className="mt-10">
-            <a
-              href="https://pay.kiwify.com.br/50zCaYu"
-              className="
-                block w-full
-                rounded-xl
-                bg-hint-green
-                py-4
-                text-center text-base font-semibold tracking-wide text-white
-                shadow-[0_4px_20px_rgba(0,200,83,0.30)]
-                transition-all duration-200 ease-out
-                hover:shadow-[0_6px_28px_rgba(0,200,83,0.45)]
-                active:scale-[0.98]
-                md:inline-block md:w-auto md:px-10 md:py-4 md:text-lg
-              "
-            >
-              Garantir minha vaga
-            </a>
+            <ScrollReveal delay={0.6}>
+              <a
+                href="https://pay.kiwify.com.br/50zCaYu"
+                className="
+                  block w-full
+                  rounded-xl
+                  bg-hint-green
+                  py-4
+                  text-center text-base font-semibold tracking-wide text-white
+                  shadow-[0_4px_20px_rgba(0,200,83,0.30)]
+                  transition-all duration-200 ease-out
+                  hover:shadow-[0_6px_28px_rgba(0,200,83,0.45)]
+                  active:scale-[0.98]
+                  md:inline-block md:w-auto md:px-10 md:py-4 md:text-lg
+                "
+              >
+                Garantir minha vaga
+              </a>
+            </ScrollReveal>
           </div>
         </div>
 

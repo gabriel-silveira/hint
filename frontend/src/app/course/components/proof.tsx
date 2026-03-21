@@ -4,6 +4,7 @@ import {
   GlobeHemisphereWest,
   Chalkboard,
 } from "@phosphor-icons/react/dist/ssr";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 /**
  * Proof & Authority — fifth section of the course landing page.
@@ -128,9 +129,11 @@ export function Proof() {
           <div className="order-1 py-8 md:col-start-2 md:row-start-1 md:pt-16 md:pb-0 md:self-start">
 
             {/* Eyebrow label */}
-            <p className="mb-6 inline-block self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
-              Resultados comprovados
-            </p>
+            <ScrollReveal delay={0.1}>
+              <p className="mb-6 inline-block self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
+                Resultados comprovados
+              </p>
+            </ScrollReveal>
 
             {/* ── Authority stat numbers ─────────────────────────────────
              *
@@ -149,75 +152,77 @@ export function Proof() {
              *   number so the figure is the first thing eyes land on.
              * - Three stats sit in a horizontal row on md+; stacked on sm.
              ───────────────────────────────────────────────────────────── */}
-            <dl className="grid grid-cols-3 gap-5 text-center sm:gap-8">
+            <ScrollReveal delay={0.2}>
+              <dl className="grid grid-cols-3 gap-5 text-center sm:gap-8">
 
-              {/* Stat 1 — 30+ anos */}
-              <div className="flex flex-col gap-2">
-                <div
-                  aria-hidden="true"
-                  className="flex items-center justify-center gap-2"
-                >
-                  <div className="h-0.5 w-8 rounded-full bg-white/40" />
-                  <Clock
-                    weight="duotone"
-                    size={24}
-                    className="text-white/70"
+                {/* Stat 1 — 30+ anos */}
+                <div className="flex flex-col gap-2">
+                  <div
                     aria-hidden="true"
-                  />
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <div className="h-0.5 w-8 rounded-full bg-white/40" />
+                    <Clock
+                      weight="duotone"
+                      size={24}
+                      className="text-white/70"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
+                    30+
+                  </dd>
+                  <dt className="text-sm leading-snug text-white sm:text-base md:text-lg">
+                    anos convivendo com o inglês
+                  </dt>
                 </div>
-                <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
-                  30+
-                </dd>
-                <dt className="text-sm leading-snug text-white sm:text-base md:text-lg">
-                  anos convivendo com o inglês
-                </dt>
-              </div>
 
-              {/* Stat 2 — 11 países */}
-              <div className="flex flex-col gap-2">
-                <div
-                  aria-hidden="true"
-                  className="flex items-center justify-center gap-2"
-                >
-                  <div className="h-0.5 w-8 rounded-full bg-white/40" />
-                  <GlobeHemisphereWest
-                    weight="duotone"
-                    size={24}
-                    className="text-white/70"
+                {/* Stat 2 — 11 países */}
+                <div className="flex flex-col gap-2">
+                  <div
                     aria-hidden="true"
-                  />
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <div className="h-0.5 w-8 rounded-full bg-white/40" />
+                    <GlobeHemisphereWest
+                      weight="duotone"
+                      size={24}
+                      className="text-white/70"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
+                    11
+                  </dd>
+                  <dt className="text-sm leading-snug text-white sm:text-base md:text-lg">
+                    países visitados
+                  </dt>
                 </div>
-                <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
-                  11
-                </dd>
-                <dt className="text-sm leading-snug text-white sm:text-base md:text-lg">
-                  países visitados
-                </dt>
-              </div>
 
-              {/* Stat 3 — 13 anos como English Teacher */}
-              <div className="flex flex-col gap-2">
-                <div
-                  aria-hidden="true"
-                  className="flex items-center justify-center gap-2"
-                >
-                  <div className="h-0.5 w-8 rounded-full bg-white/40" />
-                  <Chalkboard
-                    weight="duotone"
-                    size={24}
-                    className="text-white/70"
+                {/* Stat 3 — 13 anos como English Teacher */}
+                <div className="flex flex-col gap-2">
+                  <div
                     aria-hidden="true"
-                  />
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <div className="h-0.5 w-8 rounded-full bg-white/40" />
+                    <Chalkboard
+                      weight="duotone"
+                      size={24}
+                      className="text-white/70"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
+                    13
+                  </dd>
+                  <dt className="text-sm leading-snug text-white sm:text-base md:text-lg">
+                    anos como English Teacher
+                  </dt>
                 </div>
-                <dd className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl md:text-7xl lg:text-8xl">
-                  13
-                </dd>
-                <dt className="text-sm leading-snug text-white sm:text-base md:text-lg">
-                  anos como English Teacher
-                </dt>
-              </div>
 
-            </dl>
+              </dl>
+            </ScrollReveal>
 
           </div>
 
@@ -251,74 +256,80 @@ export function Proof() {
                 <div className="h-px flex-1 bg-white/15" />
               </div>
 
-              <p className="text-lg leading-relaxed text-white/90 md:text-xl">
-                Você não está aprendendo com alguém que apenas estudou inglês.
-              </p>
+              <ScrollReveal delay={0.3}>
+                <p className="text-lg leading-relaxed text-white/90 md:text-xl">
+                  Você não está aprendendo com alguém que apenas estudou inglês.
+                </p>
 
-              <p className="text-lg leading-relaxed text-white/80 md:text-xl">
-                Você está aprendendo com alguém que{" "}
-                <strong className="font-semibold text-white">
-                  vive o idioma há décadas.
-                </strong>
-              </p>
+                <p className="text-lg leading-relaxed text-white/80 md:text-xl">
+                  Você está aprendendo com alguém que{" "}
+                  <strong className="font-semibold text-white">
+                    vive o idioma há décadas.
+                  </strong>
+                </p>
 
-              <p className="leading-relaxed text-white/70">
-                São mais de 30 anos convivendo com o inglês na prática —
-                dentro de casa, no trabalho e na vida real.
-              </p>
+                <p className="leading-relaxed text-white/70">
+                  São mais de 30 anos convivendo com o inglês na prática —
+                  dentro de casa, no trabalho e na vida real.
+                </p>
 
-              <p className="leading-relaxed text-white/70">
-                Com formação multidisciplinar e experiência em instituições
-                reconhecidas, o método nasce da prática, da vivência e da
-                aplicação real.
-              </p>
+                <p className="leading-relaxed text-white/70">
+                  Com formação multidisciplinar e experiência em instituições
+                  reconhecidas, o método nasce da prática, da vivência e da
+                  aplicação real.
+                </p>
+              </ScrollReveal>
 
               {/* Closing emphasis — A) Amber glow */}
-              <div
-                className="relative overflow-hidden rounded-2xl px-7 py-6 md:px-9 md:py-8"
-                style={{
-                  background: "linear-gradient(135deg, #F59E0B 0%, #FBBF24 60%, #FCD34D 100%)",
-                  boxShadow: "0 8px 32px rgba(245,158,11,0.30), 0 0 60px rgba(251,191,36,0.12)",
-                }}
-              >
-                <div className="flex flex-col gap-1">
-                  <p
-                    className="font-heading text-xl font-semibold italic leading-snug md:text-2xl"
-                    style={{ color: "rgba(120,53,0,0.75)" }}
-                  >
-                    Não é teoria.
-                  </p>
-                  <p
-                    className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl"
-                    style={{
-                      textShadow: "0 2px 8px rgba(120,53,0,0.20)",
-                    }}
-                  >
-                    É resultado.
-                  </p>
+              <ScrollReveal delay={0.4}>
+                <div
+                  className="relative overflow-hidden rounded-2xl px-7 py-6 md:px-9 md:py-8"
+                  style={{
+                    background: "linear-gradient(135deg, #F59E0B 0%, #FBBF24 60%, #FCD34D 100%)",
+                    boxShadow: "0 8px 32px rgba(245,158,11,0.30), 0 0 60px rgba(251,191,36,0.12)",
+                  }}
+                >
+                  <div className="flex flex-col gap-1">
+                    <p
+                      className="font-heading text-xl font-semibold italic leading-snug md:text-2xl"
+                      style={{ color: "rgba(120,53,0,0.75)" }}
+                    >
+                      Não é teoria.
+                    </p>
+                    <p
+                      className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl"
+                      style={{
+                        textShadow: "0 2px 8px rgba(120,53,0,0.20)",
+                      }}
+                    >
+                      É resultado.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
 
               {/* Secondary CTA */}
-              <div className="mt-8 text-center md:text-left">
-                <a
-                  href="https://pay.kiwify.com.br/50zCaYu"
-                  className="
-                    block w-full
-                    rounded-xl
-                    bg-hint-green
-                    py-4
-                    text-center text-base font-semibold tracking-wide text-white
-                    shadow-[0_4px_20px_rgba(0,200,83,0.30)]
-                    transition-all duration-200 ease-out
-                    hover:shadow-[0_6px_28px_rgba(0,200,83,0.45)]
-                    active:scale-[0.98]
-                    md:inline-block md:w-auto md:px-10 md:py-4 md:text-lg
-                  "
-                >
-                  Quero começar agora
-                </a>
-              </div>
+              <ScrollReveal delay={0.5}>
+                <div className="mt-8 text-center md:text-left">
+                  <a
+                    href="https://pay.kiwify.com.br/50zCaYu"
+                    className="
+                      block w-full
+                      rounded-xl
+                      bg-hint-green
+                      py-4
+                      text-center text-base font-semibold tracking-wide text-white
+                      shadow-[0_4px_20px_rgba(0,200,83,0.30)]
+                      transition-all duration-200 ease-out
+                      hover:shadow-[0_6px_28px_rgba(0,200,83,0.45)]
+                      active:scale-[0.98]
+                      md:inline-block md:w-auto md:px-10 md:py-4 md:text-lg
+                    "
+                  >
+                    Quero começar agora
+                  </a>
+                </div>
+              </ScrollReveal>
 
             </div>
 
