@@ -1,12 +1,22 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useHeaderTheme } from "@/contexts/header-theme-context";
+
+const HERO_BACKGROUNDS = [
+  "/pexels-jean-daniel-3544024.jpg",
+  "/dave-xu-1SRyAjKt29g-unsplash.jpg",
+  "/freddy-g-Sw57gA_fojQ-unsplash.jpg",
+];
 
 export function HomeContent() {
   const { setTheme } = useHeaderTheme();
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
 
   useEffect(() => {
+    setBackgroundImage(
+      HERO_BACKGROUNDS[Math.floor(Math.random() * HERO_BACKGROUNDS.length)],
+    );
     setTheme("light");
   }, [setTheme]);
 
@@ -15,7 +25,7 @@ export function HomeContent() {
       {/* Hero Section */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-bottom"
-        style={{ backgroundImage: "url('/sp-city-background.png')" }}
+        style={backgroundImage ? { backgroundImage: `url('${backgroundImage}')` } : undefined}
       >
         {/* Purple overlay with subtle gradient for depth */}
         <div
