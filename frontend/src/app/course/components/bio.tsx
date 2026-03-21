@@ -58,8 +58,17 @@ export function Bio() {
 
         {/* Full-bleed split background: left purple (diagonal), right white */}
         <div aria-hidden="true" className="absolute inset-0 bg-white">
+          {/* Mobile: full purple background — no clip-path */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 md:hidden"
+            style={{
+              background:
+                "linear-gradient(135deg, #3a0275 0%, #5503af 40%, #4a02a0 100%)",
+            }}
+          />
+          {/* Desktop: diagonal purple panel */}
+          <div
+            className="absolute inset-0 hidden md:block"
             style={{
               background:
                 "linear-gradient(135deg, #3a0275 0%, #5503af 40%, #4a02a0 100%)",
@@ -80,27 +89,14 @@ export function Bio() {
         />
 
         <div className="container relative z-10">
-          <div className="flex flex-col md:flex-row md:items-stretch md:gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-[40%_60%] md:items-stretch">
 
-            {/* ── Left: Photo stage ── */}
-            <div className="relative flex items-end justify-end overflow-hidden md:w-[40%] md:self-stretch">
-              <Image
-                src="/larissa-frontal-2.png"
-                alt="Larissa Rovaron — professora de inglês"
-                width={625}
-                height={800}
-                priority
-                sizes="(max-width: 768px) 60vw, 380px"
-                className="relative z-10 h-full w-auto translate-x-8 object-contain object-bottom md:translate-x-12"
-              />
-            </div>
-
-            {/* ── Right: Intro text ── */}
-            <div className="relative flex flex-col justify-center px-5 py-12 md:w-[60%] md:bg-transparent md:py-24 md:pl-16 lg:pl-20">
+            {/* ── Header: eyebrow + heading + subtitle (mobile: order-1, desktop: right col top) ── */}
+            <div className="order-1 px-5 pt-12 md:col-start-2 md:row-start-1 md:pt-24 md:pl-16 lg:pl-20">
 
               {/* Eyebrow */}
               <p
-                className="bio-animate bio-delay-1 mb-5 self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 md:border-hint-purple/20 md:bg-hint-purple/5 md:text-hint-purple"
+                className="bio-animate bio-delay-1 mb-5 self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 md:border-hint-purple/20 md:bg-hint-purple/5 md:text-hint-purple inline-block"
               >
                 QUEM ENSINA
               </p>
@@ -119,15 +115,32 @@ export function Bio() {
                 Conheça Larissa Rovaron — a professora que vai transformar o seu
                 inglês de verdade
               </p>
+            </div>
+
+            {/* ── Photo (mobile: order-2 between header and body, desktop: left col spanning all rows) ── */}
+            <div className="order-2 flex items-end justify-center overflow-hidden md:col-start-1 md:row-start-1 md:row-end-3 md:justify-end md:self-stretch">
+              <Image
+                src="/larissa-frontal-2.png"
+                alt="Larissa Rovaron — professora de inglês"
+                width={625}
+                height={800}
+                priority
+                sizes="(max-width: 768px) 60vw, 380px"
+                className="relative z-10 h-auto w-full object-contain object-bottom md:h-full md:w-auto md:translate-x-12"
+              />
+            </div>
+
+            {/* ── Body: quote + paragraphs + cards (mobile: order-3, desktop: right col bottom) ── */}
+            <div className="order-3 px-5 pb-12 md:col-start-2 md:row-start-2 md:pb-24 md:pl-16 lg:pl-20">
 
               {/* Decorative rule */}
               <div
                 aria-hidden="true"
                 className="my-8 flex items-center gap-3 md:my-10"
               >
-                <div className="h-px w-16 bg-white/20 md:bg-hint-purple/20" />
+                <div className="h-px flex-1 bg-white/20 md:bg-hint-purple/20" />
                 <div className="h-1.5 w-1.5 rotate-45 bg-white/40 md:bg-hint-purple/40" />
-                <div className="h-px w-16 bg-white/20 md:bg-hint-purple/20" />
+                <div className="h-px flex-1 bg-white/20 md:bg-hint-purple/20" />
               </div>
 
               {/* Editorial quote block */}
@@ -165,7 +178,7 @@ export function Bio() {
               {/* Mini credential cards */}
               <dl
                 aria-label="Credenciais de Larissa Rovaron"
-                className="bio-animate bio-delay-6 mt-8 grid grid-cols-3 gap-3"
+                className="bio-animate bio-delay-6 mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3"
               >
                 {[
                   { stat: "13 anos", label: "como English Teacher" },

@@ -29,6 +29,12 @@ import {
  * proof data before the face, which is a deliberate persuasion choice for
  * small-screen scrollers who skim top-to-bottom.
  *
+ * Layout structure (CSS Grid):
+ *   Three direct grid children allow independent ordering on mobile vs desktop.
+ *   - Stats block:     order-1 mobile → right column top on desktop
+ *   - Photo:           order-2 mobile → left column spanning full height on desktop
+ *   - Body copy block: order-3 mobile → right column bottom on desktop
+ *
  * Accessibility:
  * - aria-label on <section> for landmark navigation
  * - <dl> / <dt> / <dd> for the stat numbers — semantically correct for
@@ -102,31 +108,24 @@ export function Proof() {
       <div className="container relative z-10 mx-auto">
 
         {/*
-         * Two-column layout:
-         *   Left col  (desktop): photo, full height of the content block.
-         *   Right col (desktop): eyebrow, body copy, stat numbers.
+         * CSS Grid layout — three direct children for independent ordering:
          *
-         * Mobile stack order via flex-col:
-         *   1. Eyebrow + stat numbers (proof-first persuasion)
-         *   2. Photo
-         *   3. Body paragraphs
-         * Handled with `order-*` utilities on each child.
+         *   Mobile (grid-cols-1, flex order 1→2→3):
+         *     1. Stats block  (eyebrow + authority numbers)
+         *     2. Photo
+         *     3. Body copy    (paragraphs + amber card + CTA)
+         *
+         *   Desktop (md:grid-cols-[5fr_7fr]):
+         *     Col 1 (left):  Photo — spans rows 1–2 via md:row-end-3, self-end
+         *     Col 2 (right): Stats (row 1) stacked above Body copy (row 2)
+         *
+         * The three blocks use explicit md:col-start and md:row-start to place
+         * themselves correctly in the two-column grid on desktop.
          */}
-        <div className="flex flex-col gap-12 md:flex-row md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[5fr_7fr] md:gap-6 lg:gap-8">
 
-          {/* ── LEFT: Photo — anchored to bottom, limited width ────────── */}
-          <div className="order-2 flex items-end justify-center overflow-hidden md:order-1 md:w-5/12 md:self-stretch lg:w-5/12">
-              <Image
-                src="/larissa-autoridade-2.png"
-                alt="Larissa Rovaron — pose de autoridade"
-                width={582}
-                height={800}
-                className="h-full w-auto object-contain object-bottom"
-              />
-          </div>
-
-          {/* ── RIGHT: Copy + Numbers ───────────────────────────────────── */}
-          <div className="order-1 flex flex-col py-16 md:order-2 md:w-7/12 md:self-center md:py-24 lg:w-1/2">
+          {/* ── Stats — mobile: first, desktop: right column top ────────── */}
+          <div className="order-1 py-8 md:col-start-2 md:row-start-1 md:py-16 md:self-start">
 
             {/* Eyebrow label */}
             <p className="mb-6 inline-block self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
@@ -150,7 +149,7 @@ export function Proof() {
              *   number so the figure is the first thing eyes land on.
              * - Three stats sit in a horizontal row on md+; stacked on sm.
              ───────────────────────────────────────────────────────────── */}
-            <dl className="mb-10 grid grid-cols-3 gap-5 text-center sm:gap-8">
+            <dl className="grid grid-cols-3 gap-5 text-center sm:gap-8">
 
               {/* Stat 1 — 30+ anos */}
               <div className="flex flex-col gap-2">
@@ -220,34 +219,23 @@ export function Proof() {
 
             </dl>
 
-            {/* ── Photo (mobile only) — sits between numbers and text ─────
-             *
-             * On mobile the photo appears here via CSS order, between the
-             * stat numbers and the body paragraphs. On md+ it disappears
-             * from this position (hidden md:hidden is not needed because
-             * the left-column photo is always rendered; on mobile the left
-             * column simply stacks after this right column).
-             * The layout is a flex-col on mobile, so the photo appears
-             * in DOM order: eyebrow → numbers → [mobile photo slot via
-             * order] → paragraphs. However, because the photo is already
-             * in the left column (order-2 on mobile = after this right
-             * column order-1), it naturally appears between the two
-             * right-column halves.
-             *
-             * No additional duplication needed — the DOM order combined
-             * with flex order utilities handles it correctly:
-             *  mobile: [right col: eyebrow+numbers+paragraphs] [left col: photo]
-             * We need the photo to appear BETWEEN numbers and paragraphs
-             * on mobile. To achieve this without duplicating the <Image>
-             * we split the right column into two sub-blocks (numbers and
-             * paragraphs) and assign them order-1 and order-3 inside a
-             * parent that reorders the left-col photo as order-2.
-             * This requires the three blocks to be direct children of
-             * the outer flex container.
-             ───────────────────────────────────────────────────────────── */}
+          </div>
 
-            {/* ── Body copy ────────────────────────────────────────────── */}
-            <div className="order-3 flex flex-col gap-5">
+          {/* ── Photo — mobile: second, desktop: left column spanning full height */}
+          <div className="order-2 flex items-end justify-center overflow-hidden md:col-start-1 md:row-start-1 md:row-end-3 md:self-end">
+            <Image
+              src="/larissa-autoridade-2.png"
+              alt="Larissa Rovaron — pose de autoridade"
+              width={582}
+              height={800}
+              className="h-auto w-3/4 object-contain object-bottom md:h-full md:w-auto"
+            />
+          </div>
+
+          {/* ── Body copy — mobile: third, desktop: right column bottom ─── */}
+          <div className="order-3 pt-8 pb-10 md:col-start-2 md:row-start-2 md:pt-0 md:pb-24">
+
+            <div className="flex flex-col gap-5">
 
               {/*
                * Thin decorative separator between numbers and copy.
@@ -312,7 +300,7 @@ export function Proof() {
               </div>
 
               {/* Secondary CTA */}
-              <div className="mt-8 pb-10 text-center md:pb-0 md:text-left">
+              <div className="mt-8 text-center md:text-left">
                 <a
                   href="https://pay.kiwify.com.br/50zCaYu"
                   className="
