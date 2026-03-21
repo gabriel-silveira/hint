@@ -147,7 +147,7 @@ export function Hero() {
         </div>
 
         {/* VSL Video */}
-        <div className="mx-auto mt-14 w-full max-w-3xl md:mt-16">
+        <div className="mx-auto mt-14 w-full max-w-7xl md:mt-16">
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
             <iframe
               src="https://www.youtube.com/embed/gdupSmKdk4Y"
