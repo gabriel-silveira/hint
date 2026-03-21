@@ -48,3 +48,16 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+/* Scroll-reveal animations — desktop only (md+) */
+@media (min-width: 768px) {
+  [data-scroll-reveal]:not([data-visible]) {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  [data-scroll-reveal][data-visible] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
