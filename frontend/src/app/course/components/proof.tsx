@@ -125,7 +125,7 @@ export function Proof() {
         <div className="grid grid-cols-1 md:grid-cols-[5fr_7fr] md:gap-6 lg:gap-8">
 
           {/* ── Stats — mobile: first, desktop: right column top ────────── */}
-          <div className="order-1 py-8 md:col-start-2 md:row-start-1 md:py-16 md:self-start">
+          <div className="order-1 py-8 md:col-start-2 md:row-start-1 md:pt-16 md:pb-0 md:self-start">
 
             {/* Eyebrow label */}
             <p className="mb-6 inline-block self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
