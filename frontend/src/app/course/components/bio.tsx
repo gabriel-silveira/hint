@@ -48,23 +48,20 @@ export function Bio() {
           <div className="flex flex-col md:flex-row md:items-stretch md:gap-0">
 
             {/* ── Left: Photo stage ── */}
-            <div className="relative flex items-end justify-center md:w-[45%] md:-ml-8 lg:-ml-12">
-
-              {/* Photo — anchored to the bottom, ~70% of wrapper height */}
-              <div className="relative w-[70%] md:w-[80%] lg:w-[75%]">
+            <div className="relative flex items-end justify-center overflow-hidden md:w-[45%] md:-ml-8 md:self-stretch lg:-ml-12">
                 <Image
-                  src="/larissa-frontal.png"
+                  src="/larissa-frontal-2.png"
                   alt="Larissa Rovaron — professora de inglês"
-                  width={440}
-                  height={660}
+                  width={625}
+                  height={800}
                   priority
                   sizes="(max-width: 768px) 60vw, 380px"
-                  className="relative z-10 w-full object-contain object-bottom"
+                  className="relative z-10 h-full w-auto object-contain object-bottom"
                 />
 
                 {/* Floating credential badge */}
                 <div
-                  className="absolute bottom-12 right-0 z-20 rounded-xl bg-white px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.15)] md:-right-6"
+                  className="absolute bottom-12 right-4 z-20 rounded-xl bg-white px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
                 >
                   <p className="font-heading text-xs font-bold uppercase tracking-widest text-hint-purple">
                     English Teacher
@@ -73,7 +70,6 @@ export function Bio() {
                     13 anos
                   </p>
                 </div>
-              </div>
             </div>
 
             {/* ── Right: Intro text ── */}
