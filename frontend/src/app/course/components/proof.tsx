@@ -115,20 +115,18 @@ export function Proof() {
         <div className="flex flex-col gap-12 md:flex-row md:gap-6 lg:gap-8">
 
           {/* ── LEFT: Photo — anchored to bottom, limited width ────────── */}
-          <div className="order-2 flex items-end justify-center overflow-hidden md:order-1 md:w-5/12 md:self-end lg:w-5/12">
-            <div className="w-[65%] md:w-[80%]">
+          <div className="order-2 flex items-end justify-center overflow-hidden md:order-1 md:w-5/12 md:self-stretch lg:w-5/12">
               <Image
-                src="/larissa-autoridade.png"
+                src="/larissa-autoridade-2.png"
                 alt="Larissa Rovaron — pose de autoridade"
-                width={480}
-                height={580}
-                className="w-full object-contain object-bottom"
+                width={582}
+                height={800}
+                className="h-full w-auto object-contain object-bottom"
               />
-            </div>
           </div>
 
           {/* ── RIGHT: Copy + Numbers ───────────────────────────────────── */}
-          <div className="order-1 flex flex-col md:order-2 md:w-7/12 md:self-center lg:w-1/2">
+          <div className="order-1 flex flex-col py-16 md:order-2 md:w-7/12 md:self-center md:py-24 lg:w-1/2">
 
             {/* Eyebrow label */}
             <p className="mb-6 inline-block self-start rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
