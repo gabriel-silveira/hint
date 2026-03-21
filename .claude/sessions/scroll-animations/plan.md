@@ -1,6 +1,6 @@
 # Scroll-triggered animations em todas as seções
 
-## Status: Pendente
+## Status: Concluído ✅
 
 ## Objetivo
 
@@ -14,7 +14,13 @@ Criar um **hook reutilizável `useScrollReveal`** + um **componente `<ScrollReve
 
 ---
 
-## Fase 1: Criar hook e componente reutilizável
+## Fase 1: Criar hook e componente reutilizável ✅
+
+> **Concluída.** Commit `01a3a7b`.
+> - Animações apenas desktop (md+) via `@media (min-width: 768px)` no globals.css
+> - Componente usa `data-scroll-reveal` / `data-visible` como hooks CSS
+> - Delay aplicado via inline `transitionDelay` (por instância)
+> - Não foi necessário converter Server Components — o `<ScrollReveal>` é Client Component e pode envolver Server Components
 
 ### 1.1 — `frontend/src/hooks/use-scroll-reveal.ts`
 - Hook customizado que retorna uma `ref`
@@ -39,7 +45,13 @@ Criar um **hook reutilizável `useScrollReveal`** + um **componente `<ScrollReve
 
 ---
 
-## Fase 2: Migrar Bio (remover sistema antigo)
+## Fase 2: Migrar Bio (remover sistema antigo) ✅
+
+> **Concluída.** Commit `bb504c5`.
+> - Removido bloco `<style>` com keyframes e classes `.bio-animate`/`.bio-delay-*`
+> - 6 elementos envolvidos com `<ScrollReveal>` (delays 0.1–0.6)
+> - Componente permanece Server Component
+> - Fix adicional: corrigido padding inferior do stats no Proof (md:pb-0)
 
 ### Arquivo: `frontend/src/app/course/components/bio.tsx`
 - Remover bloco `<style>` com `@keyframes fadeInUp` e classes `.bio-animate`, `.bio-delay-*`
@@ -59,7 +71,13 @@ Criar um **hook reutilizável `useScrollReveal`** + um **componente `<ScrollReve
 
 ---
 
-## Fase 3: Implementar nas demais seções
+## Fase 3: Implementar nas demais seções ✅
+
+> **Concluída.** Commit `409503d`.
+> - Todas as 7 seções receberam ScrollReveal (Hero, Credentials, Reframing, Method, Proof, Testimonials, Offer)
+> - Nenhum componente precisou ser convertido para Client Component
+> - Fix: cards em grid precisam de `className="h-full"` no ScrollReveal + `h-full` no div interno
+> - Fix: card 3 do Method com margens negativas precisa de `md:h-[calc(100%+1.5rem)]` no ScrollReveal
 
 ### 3.1 — Hero (`hero.tsx`)
 - Converter para Client Component
